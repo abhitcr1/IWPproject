@@ -1,17 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
-body {
-  font-size: 16px;
-  color: #404040;
-  font-family: Montserrat, sans-serif;
-  background-color: #fff;
-  background-position: center;
-  background-attachment: fixed;
-  margin: 0;
-  padding: 2rem 0;
-  display: grid;
-  place-items: center;
-  box-sizing: border-box;
-}
+body { font-size: 16px; color: #404040; font-family: Montserrat, sans-serif; background-color: #fff; margin: 0; box-sizing: border-box; } img.avatar { border-radius: 50%; width: 35px; height: 35px; background-color: #a0a0a0; padding: 0.3rem; } .no-border-right .input-group-text { border-right: none; background-color: #fff; } .no-border-right .form-control { border-left: none; } .no-border-right .form-control:focus { outline: none; box-shadow: none; border-color: #ced4da;}
 .card {
   background-color: #fff;
   max-width: 360px;
@@ -229,6 +217,7 @@ body {
   min-height: 500px;
   max-width: 350px;
   margin-bottom: 25px;
+  margin-top: 25px;
   overflow: hidden;
   padding: 30px;
 }
