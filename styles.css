@@ -1,388 +1,376 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
 body {
-    font-size: 16px;
-    color: #404040;
-    font-family: Montserrat, sans-serif;
-    background-color: #fff;
-
-    margin: 0;
-    box-sizing: border-box;
-}
-img.avatar {
-    border-radius: 50%;
-    width: 35px;
-    height: 35px;
-    background-color: #a0a0a0;
-    padding: 0.3rem;
-}
-.no-border-right .input-group-text {
-    border-right: none;
-    background-color: #fff;
-}
-.no-border-right .form-control {
-    border-left: none;
-}
-.no-border-right .form-control:focus {
-    outline: none;
-    box-shadow: none;
-    border-color: #ced4da;
+  font-size: 16px;
+  color: #404040;
+  font-family: Montserrat, sans-serif;
+  background-color: #fff;
+  background-position: center;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 2rem 0;
+  display: grid;
+  place-items: center;
+  box-sizing: border-box;
 }
 .card {
-    background-color: #fff;
-    max-width: 360px;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    border-radius: 2rem;
-    box-shadow: 0px 1rem 1.5rem rgba(0, 0, 0, 0.5);
+  background-color: #fff;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 2rem;
+  box-shadow: 0px 1rem 1.5rem rgba(0,0,0,0.5);
 }
 .card .banner {
-    background-image: url("https://images.unsplash.com/photo-1545703549-7bdb1d01b734?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 11rem;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    box-sizing: border-box;
+  background-image: url("https://images.unsplash.com/photo-1545703549-7bdb1d01b734?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 11rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  box-sizing: border-box;
 }
 .card .banner svg {
-    background-color: #fff;
-    width: 8rem;
-    height: 8rem;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
-    border-radius: 50%;
-    transform: translateY(50%);
-    transition: transform 200ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  background-color: #fff;
+  width: 8rem;
+  height: 8rem;
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.3);
+  border-radius: 50%;
+  transform: translateY(50%);
+  transition: transform 200ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
 }
 .card .banner svg:hover {
-    transform: translateY(50%) scale(1.3);
+  transform: translateY(50%) scale(1.3);
 }
 .card .menu {
-    width: 100%;
-    height: 5.5rem;
-    padding: 1rem;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-end;
-    position: relative;
-    box-sizing: border-box;
-}
-.card .menu .opener {
-    width: 2.5rem;
-    height: 2.5rem;
-    position: relative;
-    border-radius: 50%;
-    transition: background-color 100ms ease-in-out;
-}
-.card .menu .opener:hover {
-    background-color: #f2f2f2;
-}
-.card .menu .opener span {
-    background-color: #404040;
-    width: 0.4rem;
-    height: 0.4rem;
-    position: absolute;
-    top: 0;
-    left: calc(50% - 0.2rem);
-    border-radius: 50%;
-}
-.card .menu .opener span:nth-child(1) {
-    top: 0.45rem;
-}
-.card .menu .opener span:nth-child(2) {
-    top: 1.05rem;
-}
-.card .menu .opener span:nth-child(3) {
-    top: 1.65rem;
-}
-.card h2.name {
-    text-align: center;
-    padding: 0 2rem 0.5rem;
-    margin: 0;
-}
-.card .title {
-    color: #a0a0a0;
-    font-size: 0.85rem;
-    text-align: center;
-    padding: 0 2rem 1.2rem;
-}
-.card .actions {
-    padding: 0 2rem 1.2rem;
-    display: flex;
-    flex-direction: column;
-    order: 99;
-}
-.card .actions .follow-info {
-    padding: 0 0 1rem;
-    display: flex;
-}
-.card .actions .follow-info h2 {
-    text-align: center;
-    width: 50%;
-    margin: 0;
-    box-sizing: border-box;
-}
-.card .actions .follow-info h2 a {
-    text-decoration: none;
-    padding: 0.8rem;
-    display: flex;
-    flex-direction: column;
-    border-radius: 0.8rem;
-    transition: background-color 100ms ease-in-out;
-}
-.card .actions .follow-info h2 a span {
-    color: #1c9eff;
-    font-weight: bold;
-    transform-origin: bottom;
-    transform: scaleY(1.3);
-    transition: color 100ms ease-in-out;
-}
-.card .actions .follow-info h2 a small {
-    color: #afafaf;
-    font-size: 0.85rem;
-    font-weight: normal;
-}
-.card .actions .follow-info h2 a:hover {
-    background-color: #f2f2f2;
-}
-.card .actions .follow-info h2 a:hover span {
-    color: #007ad6;
-}
-.card .actions .follow-btn button {
-    color: inherit;
-    font: inherit;
-    font-weight: bold;
-    background-color: #ffd01a;
-    width: 100%;
-    border: none;
-    padding: 1rem;
-    outline: none;
-    box-sizing: border-box;
-    border-radius: 1.5rem/50%;
-    transition: background-color 100ms ease-in-out,
-        transform 200ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
-}
-.card .actions .follow-btn button:hover {
-    background-color: #efb10a;
-    transform: scale(1.1);
-}
-.card .actions .follow-btn button:active {
-    background-color: #e8a200;
-    transform: scale(1);
-}
-.card .desc {
-    text-align: justify;
-    padding: 0 2rem 2.5rem;
-    order: 100;
-}
-:root {
-    --font-color: #222;
-    --bg-color: #f2f3f7;
-    --button-bg-color: #f2f3f7;
-    --button-shadow: -6px -6px 8px rgba(255, 255, 255, 0.9),
-        5px 5px 8px rgba(0, 0, 0, 0.07);
+  width: 100%;
+  height: 5.5rem;
+  padding: 1rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  position: relative;
+  box-sizing: border-box;
 }
 
-[data-theme="dark"] {
-    --font-color: #fff;
-    --bg-color: #181818;
-    --button-bg-color: #121212;
-    --button-shadow: -2px -2px 4px rgba(255, 255, 255, 0.05),
-        0 0 10px 10px rgba(255, 255, 255, 0.005),
-        2px 2px 8px rgba(60, 60, 60, 0.1);
+.card .menu .opener {
+  width: 2.5rem;
+  height: 2.5rem;
+  position: relative;
+  border-radius: 50%;
+  transition: background-color 100ms ease-in-out;
+}
+.card .menu .opener:hover {
+  background-color: #f2f2f2;
+}
+.card .menu .opener span {
+  background-color: #404040;
+  width: 0.4rem;
+  height: 0.4rem;
+  position: absolute;
+  top: 0;
+  left: calc(50% - 0.2rem);
+  border-radius: 50%;
+}
+.card .menu .opener span:nth-child(1) {
+  top: 0.45rem;
+}
+.card .menu .opener span:nth-child(2) {
+  top: 1.05rem;
+}
+.card .menu .opener span:nth-child(3) {
+  top: 1.65rem;
+}
+.card h2.name {
+  text-align: center;
+  padding: 0 2rem 0.5rem;
+  margin: 0;
+}
+.card .title {
+  color: #a0a0a0;
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 0 2rem 1.2rem;
+}
+.card .actions {
+  padding: 0 2rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  order: 99;
+}
+.card .actions .follow-info {
+  padding: 0 0 1rem;
+  display: flex;
+}
+.card .actions .follow-info h2 {
+  text-align: center;
+  width: 50%;
+  margin: 0;
+  box-sizing: border-box;
+}
+.card .actions .follow-info h2 a {
+  text-decoration: none;
+  padding: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.8rem;
+  transition: background-color 100ms ease-in-out;
+}
+.card .actions .follow-info h2 a span {
+  color: #1c9eff;
+  font-weight: bold;
+  transform-origin: bottom;
+  transform: scaleY(1.3);
+  transition: color 100ms ease-in-out;
+}
+.card .actions .follow-info h2 a small {
+  color: #afafaf;
+  font-size: 0.85rem;
+  font-weight: normal;
+}
+.card .actions .follow-info h2 a:hover {
+  background-color: #f2f2f2;
+}
+.card .actions .follow-info h2 a:hover span {
+  color: #007ad6;
+}
+.card .actions .follow-btn button {
+  color: inherit;
+  font: inherit;
+  font-weight: bold;
+  background-color: #ffd01a;
+  width: 100%;
+  border: none;
+  padding: 1rem;
+  outline: none;
+  box-sizing: border-box;
+  border-radius: 1.5rem/50%;
+  transition: background-color 100ms ease-in-out, transform 200ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+.card .actions .follow-btn button:hover {
+  background-color: #efb10a;
+  transform: scale(1.1);
+}
+.card .actions .follow-btn button:active {
+  background-color: #e8a200;
+  transform: scale(1);
+}
+.card .desc {
+  text-align: justify;
+  padding: 0 2rem 2.5rem;
+  order: 100;
+}
+:root {
+  --font-color: #222;
+  --bg-color: #f2f3f7;
+  --button-bg-color: #f2f3f7;
+  --button-shadow:
+    -6px -6px 8px rgba(255, 255, 255, 0.9),
+    5px 5px 8px rgba(0, 0, 0, 0.07);
+}
+
+[data-theme=dark] {
+  --font-color: #fff;
+  --bg-color: #181818;
+  --button-bg-color: #121212;
+  --button-shadow:
+    -2px -2px 4px rgba(255, 255, 255, 0.05),
+    0 0 10px 10px rgba(255, 255, 255, 0.005),
+    2px 2px 8px rgba(60, 60, 60, 0.1);
 }
 
 html {
-    box-sizing: border-box;
-    font-size: 18px;
-    font-family: "Roboto", sans-serif;
-    color: var(--font-color);
+  box-sizing: border-box;
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+  color: var(--font-color);
 }
 
 *,
 *:before,
 *:after {
-    box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 body {
-    background-color: #f2f2f2;
+  background-color: #f2f2f2;
 }
 
 .color-cool {
-    color: #077dfe;
+  color: #077dfe;
 }
 
 .color-warm {
-    color: #ff7a00;
+  color: #ff7a00;
 }
 
 .container {
-    display: flex;
-    justify-content: space-evenly;
-    padding-top: 25px;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 25px;
+  margin-top: 30px;
+  align-items: center;
+  flex-direction: column;
 }
 
 @media screen and (min-width: 800px) {
-    .container {
-        flex-direction: row;
-    }
+  .container {
+    flex-direction: row;
+  }
 }
 .app-container {
-    background-color: var(--bg-color);
-    border-radius: 40px;
-    box-shadow: -2px -2px 4px 0px #ffffff,
-        50px 50px 50px 0px rgba(0, 0, 0, 0.25);
-    display: block;
-    flex: 1;
-    min-height: 500px;
-    max-width: 350px;
-    margin-bottom: 25px;
-    overflow: hidden;
-    padding: 30px;
+  background-color: var(--bg-color);
+  border-radius: 40px;
+  box-shadow: -2px -2px 4px 0px #ffffff, 50px 50px 50px 0px rgba(0, 0, 0, 0.25);
+  display: block;
+  flex: 1;
+  min-height: 500px;
+  max-width: 350px;
+  margin-bottom: 25px;
+  overflow: hidden;
+  padding: 30px;
 }
 
 .app-top-bar {
-    display: flex;
-    align-items: center;
-    margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
 }
 
 .app-heading {
-    color: var(--font-color);
-    display: block;
-    flex: 1;
-    font-size: 28px;
-    font-weight: 800;
-    margin: 0;
-    text-align: center;
+  color: var(--font-color);
+  display: block;
+  flex: 1;
+  font-size: 28px;
+  font-weight: 800;
+  margin: 0;
+  text-align: center;
 }
 
 button {
-    border: 0;
+  border: 0;
 }
 button:focus {
-    border: none;
-    outline: 0 !important;
-    outline-style: none;
+  border: none;
+  outline: 0 !important;
+  outline-style: none;
 }
 
 .button {
-    color: var(--font-color);
-    position: relative;
-    border-radius: 15px;
-    background: var(--button-bg-color);
-    font-weight: 700;
-    transition: all 100ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow: var(--button-shadow);
-    cursor: pointer;
+  color: var(--font-color);
+  position: relative;
+  border-radius: 15px;
+  background: var(--button-bg-color);
+  font-weight: 700;
+  transition: all 100ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: var(--button-shadow);
+  cursor: pointer;
 }
 .button.button-link {
-    color: #067cf8;
-    display: block;
-    font-size: 17px;
-    margin: 30px 0 0;
-    padding: 20px 0;
-    width: 100%;
+  color: #067CF8;
+  display: block;
+  font-size: 17px;
+  margin: 30px 0 0;
+  padding: 20px 0;
+  width: 100%;
 }
 .button.button-small {
-    color: #6d6e74;
-    font-size: 22px;
-    line-height: 40px;
-    width: 40px;
-    height: 40px;
+  color: #6D6E74;
+  font-size: 22px;
+  line-height: 40px;
+  width: 40px;
+  height: 40px;
 }
 .button.button-large {
-    display: flex;
-    font-size: 20px;
-    flex-direction: column;
-    padding: 15px;
-    text-align: left;
-    width: 45%;
+  display: flex;
+  font-size: 20px;
+  flex-direction: column;
+  padding: 15px;
+  text-align: left;
+  width: 45%;
 }
 .button.button-large svg {
-    margin-bottom: 40px;
-    width: 30px;
+  margin-bottom: 40px;
+  width: 30px;
 }
 
 .button-dial {
-    border-radius: 50%;
-    display: flex;
-    height: 270px;
-    margin: 35px auto;
-    align-items: center;
-    justify-content: center;
-    width: 270px;
+  
+  border-radius: 50%;
+  display: flex;
+  height: 150px;
+  margin: 35px auto;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+
 }
 
 .button-dial-top {
-    background: var(--button-bg-color);
-    box-shadow: var(--button-shadow);
-    border-radius: 50%;
-    width: 70%;
-    height: 70%;
-    margin: 0 auto;
-    position: absolute;
-    top: 15%;
-    left: 15%;
-    text-align: center;
-    z-index: 5;
+  background: var(--button-bg-color);
+  box-shadow: var(--button-shadow);
+  border-radius: 50%;
+  width: 70%;
+  height: 70%;
+  margin: 0 auto;
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  text-align: center;
+  z-index: 5;
 }
 
 .button-dial-label {
-    color: #067cf8;
-    font-size: 28px;
-    fill: #067cf8;
-    position: relative;
-    z-index: 10;
+  color: #067CF8;
+  fill: #067CF8;
+  position: relative;
+  z-index: 10;
 }
 
 .button-dial-spoke {
-    background-color: rgba(96, 171, 254, 0.6);
-    display: block;
-    height: 2px;
-    width: 83%;
-    position: absolute;
-    margin: 0 auto;
-    z-index: 5;
-    top: 50%;
+  background-color: rgba(96, 171, 254, 0.6);
+  display: block;
+  height: 2px;
+  width: 83%;
+  position: absolute;
+  margin: 0 auto;
+  z-index: 5;
+  top: 50%;
 }
 .button-dial-spoke:nth-child(2) {
-    transform: rotate(30deg);
+  transform: rotate(30deg);
 }
 .button-dial-spoke:nth-child(3) {
-    transform: rotate(60deg);
+  transform: rotate(60deg);
 }
 .button-dial-spoke:nth-child(4) {
-    transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 .button-dial-spoke:nth-child(5) {
-    transform: rotate(120deg);
+  transform: rotate(120deg);
 }
 .button-dial-spoke:nth-child(6) {
-    transform: rotate(150deg);
+  transform: rotate(150deg);
 }
 
 .button-block {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    padding: 15px 24px;
-    width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 24px;
+  width: 100%;
 }
 .button-block span {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .subtle {
-    color: #6d6e74;
+  color: #6D6E74;
 }
 
 .flex-button-container {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
