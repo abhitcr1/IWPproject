@@ -46,3 +46,27 @@ body {
     display: block;
     font-size: inherit;
 }
+.dropdown-menu-center {
+    left: 50% !important;
+    right: auto !important;
+    text-align: center !important;
+    transform: translate(-50%, 30px) !important;
+}
+.ml-auto > div {
+    cursor: pointer;
+    margin-left: auto;
+}
+.card-row {
+    height: 75vh;
+    overflow: hidden;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+.card-width {
+    height: -webkit-fill-available;
+    display: inline-block;
+}
+.card-width > img {
+    height: 100%;
+    width: 100%;
+}

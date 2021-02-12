@@ -147,18 +147,91 @@
                 </div>
             </div>
         </nav>
-
-        <!-- Bootstarp default footer -->
-
-        <footer class="navbar fixed-bottom mb-lg-4 mb-2">
+        <!-- Main Content -->
+        <div class="container-fluid">
+            <!-- Sub options year and calendar picker-->
+            <div class="row mt-3">
+                <div
+                    class="col d-flex justify-content-center fs-5 align-items-center ml-auto"
+                >
+                    <div class="dropdown">
+                        <span
+                            class="dropdown-toggle"
+                            id="dropdownMenuButton"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                            >2021</span
+                        >
+                        <ul
+                            class="dropdown-menu dropdown-menu-center"
+                            aria-labelledby="dropdownMenuButton"
+                        >
+                            <!-- This content will be dynamically generated -->
+                            <li class="dropdown-header">Browse by Year</li>
+                            <li><a href="#" class="dropdown-item">2020</a></li>
+                            <li><a href="#" class="dropdown-item">2019</a></li>
+                            <li><a href="#" class="dropdown-item">2018</a></li>
+                            <li><a href="#" class="dropdown-item">2017</a></li>
+                            <li><hr class="dropdown-divider" /></li>
+                            <li class="dropdown-header">End of Time</li>
+                        </ul>
+                    </div>
+                    <!-- Calendar icon : CLICK : OPEN Calendar @abhit -->
+                    <div
+                        class="badge rounded-pill bg-white text-dark p-2 shadow"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="22"
+                            height="22"
+                            fill="currentColor"
+                            class="bi bi-calendar-date-fill"
+                            viewBox="0 0 16 16"
+                        >
+                            <path
+                                d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5zm5.402 9.746c.625 0 1.184-.484 1.184-1.18 0-.832-.527-1.23-1.16-1.23-.586 0-1.168.387-1.168 1.21 0 .817.543 1.2 1.144 1.2z"
+                            />
+                            <path
+                                d="M16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2zm-6.664-1.21c-1.11 0-1.656-.767-1.703-1.407h.683c.043.37.387.82 1.051.82.844 0 1.301-.848 1.305-2.164h-.027c-.153.414-.637.79-1.383.79-.852 0-1.676-.61-1.676-1.77 0-1.137.871-1.809 1.797-1.809 1.172 0 1.953.734 1.953 2.668 0 1.805-.742 2.871-2 2.871zm-2.89-5.435v5.332H5.77V8.079h-.012c-.29.156-.883.52-1.258.777V8.16a12.6 12.6 0 0 1 1.313-.805h.632z"
+                            />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <!-- Row of card entries -->
+            <div class="rol">
+                <div class="col mt-2">
+                    <div class="card-row">
+                        <div class="card card-width m-2">
+                            <img src="https://source.unsplash.com/320x640" />
+                        </div>
+                        <div class="card card-width m-2">
+                            <img src="https://source.unsplash.com/320x640" />
+                        </div>
+                        <div class="card card-width m-2">
+                            <img src="https://source.unsplash.com/320x640" />
+                        </div>
+                        <div class="card card-width m-2">
+                            <img src="https://source.unsplash.com/320x640" />
+                        </div>
+                        <div class="card card-width m-2">
+                            <img src="https://source.unsplash.com/320x640" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bootstrap default footer -->
+        <footer class="navbar fixed-bottom mb-lg-2 mb-2">
             <div class="container-fluid d-flex">
                 <span
-                    class="badge rounded-pill bg-dark text-white p-2 mx-3"
+                    class="badge rounded-pill bg-white bg-gradient text-dark p-2 mx-3 shadow"
                     id="weather"
                 >
+                    <!-- Content is dynamically inserted -->
                 </span>
                 <span
-                    class="pill bg-dark text-white mx-3 d-flex align-items-center"
+                    class="pill bg-white bg-gradient text-dark mx-3 d-flex align-items-center shadow"
                     ><svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="30"
