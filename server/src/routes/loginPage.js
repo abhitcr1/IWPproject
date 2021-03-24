@@ -5,7 +5,7 @@ import LoginPage from "../components/pages/LoginPage";
 
 // Add cookie middleware and expect mongoid in params
 router.get("/", (req, res) => {
-    res.render("react/index.html", {
+    res.render("react-template.html", {
         reactApp: renderToString(
             <LoginPage emailErrorServer={false} passwordErrorServer={false} />
         ),

@@ -7,7 +7,7 @@ const config = {
         bundle: ["./src/components/index.jsx"],
     },
     output: {
-        path: path.resolve(__dirname, "src", "static", "react"),
+        path: path.resolve(__dirname, "static", "react"),
         filename: "[name].js",
     },
     module: {

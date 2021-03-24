@@ -5,9 +5,9 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
-app.set("views", path.join(__dirname, "views"));
+app.set("views", "views");
 app.engine("html", require("ejs").renderFile);
-app.use(express.static(path.join(__dirname, "static")));
+app.use(express.static("static"));
 
 app.use("/", require("./routes/loginPage"));
 app.use("/api", require("./routes/api/getEnabledDates"));
