@@ -53,6 +53,7 @@ function LoginPage({ emailErrorServer = false, passwordErrorServer = false }) {
                                         emailError ? "is-invalid" : ""
                                     }`}
                                     name="email"
+                                    id="emailID"
                                     placeholder="example@example.com"
                                     onBlur={() => validate("email")}
                                     onChange={(e) => setEmail(e.target.value)}

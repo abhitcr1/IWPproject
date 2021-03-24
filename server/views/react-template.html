@@ -39,7 +39,7 @@
     </body>
     <script>
         $(document).ready(function () {
-            console.log("Trigger Carousel");
+            <% if(email) {%>$("#emailID").val("<%- email %>"); <% } %>
             $(".carousel").carousel({
                 interval: 4000,
             });

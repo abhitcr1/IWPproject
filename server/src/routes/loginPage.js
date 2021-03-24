@@ -9,10 +9,33 @@ router.get("/", (req, res) => {
         reactApp: renderToString(
             <LoginPage emailErrorServer={false} passwordErrorServer={false} />
         ),
+        email: "",
     });
 });
 
 router.post("/", (req, res) => {
-    res.send(req.body);
+    const { email, password } = req.body;
+    if (!email || !password) return res.redirect("/");
+    if (email != "anurag@anurag.com")
+        return res.render("react-template.html", {
+            reactApp: renderToString(
+                <LoginPage
+                    emailErrorServer={true}
+                    passwordErrorServer={false}
+                />
+            ),
+            email: email,
+        });
+    if (password != "123456")
+        return res.render("react-template.html", {
+            reactApp: renderToString(
+                <LoginPage
+                    emailErrorServer={false}
+                    passwordErrorServer={true}
+                />
+            ),
+            email: email,
+        });
+    return res.send("Logged IN");
 });
 module.exports = router;
