@@ -5,15 +5,16 @@
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node src/index.js",
+        "start": "node build/index.js",
         "dev:webpack": "webpack --watch --config ./webpack.config.js",
-        "build": "webpack --config ./webpack.prod.js",
+        "build": "webpack --config ./webpack.prod.js && npx babel src --out-dir build",
         "dev:server": "nodemon --exec babel-node src/index.js",
         "dev": "concurrently \"npm run dev:server\" \"npm run dev:webpack\""
     },
     "author": "Anurag Verma",
     "license": "MIT",
     "dependencies": {
+        "body-parser": "^1.19.0",
         "compression": "^1.7.4",
         "ejs": "^3.1.6",
         "express": "^4.17.1",

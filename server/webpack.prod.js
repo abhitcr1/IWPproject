@@ -4,7 +4,8 @@ const config = {
     mode: "production",
     entry: {
         react: ["@babel/polyfill", "react"],
-        bundle: ["./src/components/index.jsx"],
+        loginPage: ["./src/components/loginPage.jsx"],
+        signupPage: ["./src/components/signupPage.jsx"],
     },
     output: {
         path: path.resolve(__dirname, "static", "react"),
