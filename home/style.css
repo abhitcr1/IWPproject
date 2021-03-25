@@ -7,6 +7,36 @@ body {
         background-color: #f8f9fa;
     }
 }
+
+/* width */
+::-webkit-scrollbar {
+  width: 1px;
+}
+
+input {
+    border: 2px solid whitesmoke;
+    border-radius: 20px;
+    padding: 12px 10px;
+    text-align: center;
+    width: 250px;
+  }
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 20px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #212529; 
+  border-radius: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #000000; 
+}
+
 .avatar {
     width: 26px;
     height: 26px;
