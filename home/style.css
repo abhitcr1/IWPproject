@@ -66,7 +66,7 @@ body {
     height: -webkit-fill-available;
     display: inline-block;
 }
-.card-width > img {
+.card-width img {
     height: 100%;
     width: 100%;
 }
