@@ -32,10 +32,123 @@
         <!-- Custom Imports -->
         <link rel="stylesheet" href="../home/style.css" />
         <link rel="stylesheet" href="./instyle.css" />
+        <script src="./inmain.js" defer></script>
     </head>
     <body>
         <!-- Bootstrap default Navbar  -->
+        <nav
+            class="navbar navbar-main sticky-top navbar-light navbar-expand-lg"
+        >
+            <!-- Navbar brand -->
+            <div class="container-fluid">
+                <a href="#" class="navbar-brand">
+                    <img
+                        src="../home/assets/favicon.png"
+                        alt="Diary Icon"
+                        width="30"
+                        height="30"
+                        class="d-inline-block align-top"
+                    />
+                    <span class="h5">Diary</span>
+                </a>
 
+                <!-- Hamburger Button -->
+                <div
+                    class="navbar-toggler"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </div>
+                <!-- Navbar Shortcut Links -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav d-flex w-100 mt-2 mt-lg-0">
+                        <form
+                            class="form-inline mx-lg-2 d-flex align-items-center"
+                        >
+                            <div
+                                class="input-group input-group-sm no-border-right mt-3 mt-lg-0"
+                            >
+                                <div class="input-group-text">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="16"
+                                        height="16"
+                                        fill="currentColor"
+                                        class="bi bi-search"
+                                        viewBox="0 0 16 16"
+                                    >
+                                        <path
+                                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+                                        />
+                                    </svg>
+                                </div>
+
+                                <input
+                                    class="form-control"
+                                    type="text"
+                                    placeholder="Search"
+                                    aria-label="Search"
+                                />
+                            </div>
+                        </form>
+                        <div class="d-block ms-0 d-lg-flex ms-lg-auto">
+                            <!-- Pill for LG viewport -->
+                            <li
+                                class="nav-item d-none d-lg-flex align-items-center mx-lg-2 badge rounded-pill bg-white text-dark shadow-sm"
+                            >
+                                <a href="#" class="nav-link active">
+                                    Anurag Verma
+                                </a>
+                                <img
+                                    src="https://lh3.googleusercontent.com/a-/AOh14GjLl6-teruNiz6KsDh9p7Cx-a6z817FzdiUZY1cbiE=s96-c"
+                                    alt="Anurag Verma"
+                                    class="img-fluid avatar"
+                                    crossorigin="anonymous"
+                                />
+                            </li>
+                            <!-- Inline item for other devices -->
+                            <li
+                                class="nav-item d-lg-none d-flex align-items-center mt-2"
+                            >
+                                <a href="#" class="nav-link active">
+                                    Anurag Verma
+                                </a>
+                                <img
+                                    src="https://lh3.googleusercontent.com/a-/AOh14GjLl6-teruNiz6KsDh9p7Cx-a6z817FzdiUZY1cbiE=s96-c"
+                                    alt="Anurag Verma"
+                                    class="img-fluid avatar"
+                                    crossorigin="anonymous"
+                                />
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link d-flex">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        fill="currentColor"
+                                        class="bi bi-power"
+                                        viewBox="0 0 16 16"
+                                    >
+                                        <path d="M7.5 1v7h1V1h-1z" />
+                                        <path
+                                            d="M3 8.812a4.999 4.999 0 0 1 2.578-4.375l-.485-.874A6 6 0 1 0 11 3.616l-.501.865A5 5 0 1 1 3 8.812z"
+                                        />
+                                    </svg>
+                                    <span class="d-lg-none d-block mx-3 fw-bold"
+                                        >Logout</span
+                                    >
+                                </a>
+                            </li>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </nav>
         <!-- Main Content -->
         <div class="container-fluid fs">
             <!-- Single Card -->
@@ -45,16 +158,17 @@
                         <a href="../home/index.html"
                             ><svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                width="40"
-                                height="40"
+                                width="35"
+                                height="35"
                                 fill="white"
                                 class="bi bi-arrow-left-circle-fill rounded-pill shadow"
                                 viewBox="0 0 16 16"
                             >
                                 <path
                                     d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"
-                                /></svg
-                        ></a>
+                                />
+                            </svg>
+                        </a>
                         <!-- Carousel -->
                         <div
                             id="cars-intro"
@@ -91,23 +205,17 @@
                                 ></button>
                             </div>
                             <div class="carousel-inner">
-                                <div
-                                    class="carousel-item active carousel-item-start"
-                                >
+                                <div class="carousel-item active carousel-item-start">
                                     <img
                                         src="http://source.unsplash.com/random/1080x1920?q=197297"
                                         class="d-block w-100"
-                                        alt="..."
                                         style="height: auto"
                                     />
                                 </div>
-                                <div
-                                    class="carousel-item carousel-item-next carousel-item-start"
-                                >
+                                <div class="carousel-item carousel-item-next carousel-item-start">
                                     <img
                                         src="http://source.unsplash.com/random/1080x1920?q=27286"
                                         class="d-block w-100"
-                                        alt="..."
                                         style="height: auto"
                                     />
                                 </div>
@@ -115,7 +223,6 @@
                                     <img
                                         src="http://source.unsplash.com/random/1080x1920?q=87927927"
                                         class="d-block w-100"
-                                        alt="..."
                                         style="height: auto"
                                     />
                                 </div>
@@ -123,39 +230,44 @@
                                     <img
                                         src="http://source.unsplash.com/random/1080x1920?q=9796"
                                         class="d-block w-100"
-                                        alt="..."
                                         style="height: auto"
                                     />
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-8 col-xs-12">
-                        <div class="card-body">
-                            <h4 class="card-title">Card Heading</h4>
-                            <p class="card-text">
+                    <div class="col-sm-8 col-xs-12">  
+                        <div class="card-body">                     
+                            <button type= "button" id= "editbtn" class= "btn" onclick="toggle()">
+                              <svg 
+                                xmlns="http://www.w3.org/2000/svg"  
+                                fill="white"
+                                class="edit bi bi-pen rounded-pill shadow p-1" 
+                                viewBox="-5 -5 25 25">                         
+                                <path d="M13.498.795l.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001zm-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708l-1.585-1.585z"/>
+                              </svg>
+                            </button>
+                            <br>                          
+                            <h4 id= "title" class="card-title">Card Heading</h4><hr>
+                            <h5 id= "mood" class="card-moodmood">Mood</h5><hr>
+                            <p id= "txt" class="card-text">
                                 This is a wider card with supporting text below
                                 as a natural lead-in to additional content. This
                                 content is a little bit longer.
                             </p>
                             <p class="card-text">
-                                <small class="text-muted"
-                                    >Last updated 3 mins ago</small
-                                >
+                                <small class="text-muted">Last updated 3 mins ago</small>
                             </p>
-                            <a href="#"
-                                ><svg
+                            <button type= "button" id= "savebtn" class= "btn" onclick="restore()">
+                                <svg
                                     xmlns="http://www.w3.org/2000/svg"
-                                    width="50"
-                                    height="50"
-                                    fill="black"
-                                    class="bi bi-check-circle-fill rounded-pill shadow"
-                                    viewBox="0 0 16 16"
-                                >
+                                    fill="#49c3e0"
+                                    class="save bi bi-check-circle-fill rounded-pill shadow"
+                                    viewBox="0 0 16 16">
                                     <path
                                         d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"
-                                    /></svg
-                            ></a>
+                                    /></svg >
+                            </button>
                         </div>
                     </div>
                 </div>
