@@ -12,6 +12,7 @@ app.engine("html", require("ejs").renderFile);
 app.use(express.static("static"));
 
 app.use("/", require("./routes/loginPage"));
+app.use("/signup", require("./routes/SignUp"));
 app.use("/api", require("./routes/api/getEnabledDates"));
 app.use("/api", require("./routes/api/getEntry"));
 app.listen(PORT, () => console.log(`Listening on PORT: ${PORT}`));

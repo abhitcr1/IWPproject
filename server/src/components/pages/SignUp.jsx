@@ -5,7 +5,7 @@ import Hero from "./Hero";
 import Input from "./Input";
 import OpenSource from "./OpenSource";
 
-function LoginPage() {
+function SignUp() {
     return (
         <div className="container-fluid fs">
             <div className="row h-100">
@@ -15,6 +15,12 @@ function LoginPage() {
                 <div className="col-sm col-md-8 h-100 p-5 align-items-center">
                     <Hero message="To continue further, you'll need to login" />
                     <form className="w-75 w-sm-100 my-4" method="POST">
+                        <Input
+                            type="text"
+                            label="Your Name"
+                            placeholder="I am Batman"
+                            type="text"
+                        />
                         <Input
                             name="email"
                             label="Email Address"
@@ -31,25 +37,11 @@ function LoginPage() {
                             errorMessage="Your password is wrong. Did you forget it?"
                         />
 
-                        <div className="mb-3 form-check">
-                            <input
-                                type="checkbox"
-                                className="form-check-input"
-                                id="loginCheck"
-                                name="remember"
-                            />
-                            <label
-                                className="form-check-label"
-                                htmlFor="loginCheck"
-                            >
-                                Keep me logged in
-                            </label>
-                        </div>
                         <button type="submit" className="btn btn-dark w-100">
                             Submit
                         </button>
                     </form>
-                    <HelperMenu signup={true} forgot={true} />
+                    <HelperMenu login={true} />
                     <OpenSource />
                 </div>
             </div>
@@ -57,4 +49,4 @@ function LoginPage() {
     );
 }
 
-export default LoginPage;
+export default SignUp;
