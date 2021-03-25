@@ -1,44 +1,56 @@
-.card img{
+.card img {
     width: 100%;
     height: 100%;
 }
 
-#cimg{
-    height: 90vh;
+#cimg {
+    height: 96vh;
     overflow: hidden;
 }
-
-#cimg svg{
+div#cimg::after {
+    content: "";
+    background-image: linear-gradient(
+        0deg,
+        #0000003b,
+        transparent,
+        transparent
+    );
+    position: absolute;
+    top: 0;
+    width: inherit;
+    height: inherit;
+}
+#cimg svg {
     position: absolute;
     left: 1%;
+    z-index: 99;
     top: 2%;
+    fill: #000000;
+    background-color: #ffffff;
+    transition: all cubic-bezier(0.165, 0.84, 0.44, 1) 0.3s;
 }
 
-#cimg svg:hover{
+#cimg svg:hover {
     width: 45px;
     height: 45px;
     top: 1.75%;
     left: 0.75%;
-    fill: #fafafa; 
-    background-color: #000000;
 }
 
-.card-body{
+.card-body {
     overflow-y: hidden;
 }
 
-.card-body svg{
+.card-body svg {
     position: absolute;
     right: 2%;
     bottom: 3%;
+    transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s;
 }
 
-.card-body svg:hover{
+.card-body svg:hover {
     width: 55px;
     height: 55px;
     right: 1.75%;
     bottom: 2.75%;
 }
-
-
-
