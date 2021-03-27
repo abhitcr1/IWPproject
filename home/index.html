@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>HomePage</title>
-        <link rel= "icon" type= "image/png" href= "../home/assets/favicon.png"/>
+        <link rel="icon" type="image/png" href="../home/assets/favicon.png" />
         <!-- Bootstrap and Popper.js and Font Face-->
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
@@ -29,6 +29,14 @@
             integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
             crossorigin="anonymous"
         ></script>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/themes/white.css"
+        />
         <!-- Custom Imports -->
         <link rel="stylesheet" href="./style.css" />
         <script src="./main.js" defer></script>
@@ -155,31 +163,16 @@
                 <div
                     class="col d-flex justify-content-center fs-5 align-items-center ml-auto"
                 >
-                    <div class="dropdown">
-                        <span
-                            class="dropdown-toggle"
-                            id="dropdownMenuButton"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false"
-                            >2021</span
-                        >
-                        <ul
-                            class="dropdown-menu dropdown-menu-center"
-                            aria-labelledby="dropdownMenuButton"
-                        >
-                            <!-- This content will be dynamically generated -->
-                            <li class="dropdown-header">Browse by Year</li>
-                            <li><a href="#" class="dropdown-item">2020</a></li>
-                            <li><a href="#" class="dropdown-item">2019</a></li>
-                            <li><a href="#" class="dropdown-item">2018</a></li>
-                            <li><a href="#" class="dropdown-item">2017</a></li>
-                            <li><hr class="dropdown-divider" /></li>
-                            <li class="dropdown-header">End of Time</li>
-                        </ul>
-                    </div>
+                    <!-- <input
+                        type="text"
+                        id="basicDate"
+                        placeholder="Pick a Date"
+                        data-input
+                    /> -->
+
                     <!-- Calendar icon : CLICK : OPEN Calendar @abhit -->
                     <div
-                        class="badge rounded-pill bg-white text-dark p-2 shadow"
+                        class="badge rounded-pill bg-white text-dark p-2 shadow picker"
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -204,19 +197,52 @@
                 <div class="col mt-2">
                     <div class="card-row">
                         <div class="card card-width m-2">
-                            <a href= "../inside/insidex.html"><img src="https://source.unsplash.com/320x640" /></a>
+                            <a href="../inside/insidex.html"
+                                ><img src="https://source.unsplash.com/320x640"
+                            /></a>
+                            <span class="overlay p-2">
+                                <h2 class="h2 py-3">July 18, 2021</h2>
+                                <p class="text-light">You seem happy. 😀</p>
+                                <p class="py-5 fst-italic my-5">
+                                    4 entries on this day
+                                </p>
+                            </span>
                         </div>
                         <div class="card card-width m-2">
-                            <a href= "../inside/insidex.html"><img src="https://source.unsplash.com/320x640" /></a> 
+                            <a href="../inside/insidex.html"
+                                ><img src="https://source.unsplash.com/320x640"
+                            /></a>
+                            <span class="overlay p-2">
+                                <h2 class="h2 py-3">July 18, 2021</h2>
+                                <p class="text-light">You seem happy. 😀</p>
+                                <p class="py-5 fst-italic my-5">
+                                    4 entries on this day
+                                </p>
+                            </span>
                         </div>
                         <div class="card card-width m-2">
-                            <a href= "../inside/insidex.html"><img src="https://source.unsplash.com/320x640" /></a>
+                            <a href="../inside/insidex.html"
+                                ><img src="https://source.unsplash.com/320x640"
+                            /></a>
+                            <span class="overlay p-2">
+                                <h2 class="h2 py-3">July 18, 2021</h2>
+                                <p class="text-light">You seem happy. 😀</p>
+                                <p class="py-5 fst-italic my-5">
+                                    4 entries on this day
+                                </p>
+                            </span>
                         </div>
                         <div class="card card-width m-2">
-                            <a href= "../inside/insidex.html"><img src="https://source.unsplash.com/320x640" /></a>
-                        </div>
-                        <div class="card card-width m-2">
-                            <a href= "../inside/insidex.html"><img src="https://source.unsplash.com/320x640" /></a>
+                            <a href="../inside/insidex.html"
+                                ><img src="https://source.unsplash.com/320x640"
+                            /></a>
+                            <span class="overlay p-2">
+                                <h2 class="h2 py-3">July 18, 2021</h2>
+                                <p class="text-light">You seem happy. 😀</p>
+                                <p class="py-5 fst-italic my-5">
+                                    4 entries on this day
+                                </p>
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -252,5 +278,8 @@
                 </span>
             </div>
         </footer>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!--  Flatpickr  -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.js"></script>
     </body>
 </html>
