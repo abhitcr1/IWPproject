@@ -10,7 +10,7 @@ body {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 1px;
+    height: 3px;
 }
 
 input {
@@ -19,22 +19,22 @@ input {
     padding: 12px 10px;
     text-align: center;
     width: 250px;
-  }
+}
 /* Track */
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey; 
-  border-radius: 20px;
+    /* box-shadow: inset 0 0 5px grey; */
+    border-radius: 20px;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #212529; 
-  border-radius: 20px;
+    background: #212529;
+    border-radius: 20px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #000000; 
+    background: #000000;
 }
 
 .avatar {
@@ -95,6 +95,21 @@ input {
 .card-width {
     height: -webkit-fill-available;
     display: inline-block;
+    position: relative;
+    width: 20em;
+}
+.overlay {
+    position: absolute;
+    display: block;
+    color: #fff;
+    width: -webkit-fill-available;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    background-image: linear-gradient(180deg, #000000d8, transparent);
+    top: 0;
+    min-width: fit-content;
+    flex-direction: column;
 }
 .card-width img {
     height: 100%;

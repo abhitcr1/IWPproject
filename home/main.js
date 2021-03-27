@@ -17,24 +17,29 @@ navigator.geolocation.getCurrentPosition(
         $("#weather").text("Permission Denied for Location");
     }
 );
-$("#basicDate").flatpickr({
-    enableTime: true,
-    dateFormat: "F, d Y H:i"
+$(".picker").flatpickr({
+    onChange: function (selectedString) {
+        console.log(selectedString);
+    },
 });
+// $("#basicDate").flatpickr({
+//     enableTime: true,
+//     dateFormat: "F, d Y H:i"
+// });
 
-$("#rangeDate").flatpickr({
-    mode: 'range',
-    dateFormat: "Y-m-d"
-});
+// $("#rangeDate").flatpickr({
+//     mode: 'range',
+//     dateFormat: "Y-m-d"
+// });
 
-$("#timePicker").flatpickr({
-    enableTime: true,
-    noCalendar: true,
-    time_24hr: true,
-    dateFormat: "H:i",
-});
+// $("#timePicker").flatpickr({
+//     enableTime: true,
+//     noCalendar: true,
+//     time_24hr: true,
+//     dateFormat: "H:i",
+// });
 
-$(".resetDate").flatpickr({
-    wrap: true,
-    weekNumbers: true,
-});
+// $(".resetDate").flatpickr({
+//     wrap: true,
+//     weekNumbers: true,
+// });

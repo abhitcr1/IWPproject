@@ -13,7 +13,7 @@ function SignUp() {
                     <Carousel />
                 </div>
                 <div className="col-sm col-md-8 h-100 p-5 align-items-center">
-                    <Hero message="To continue further, you'll need to login" />
+                    <Hero message="Hey just one more step and you're good to go" />
                     <form className="w-75 w-sm-100 my-4" method="POST">
                         <Input
                             type="text"
