@@ -8,6 +8,8 @@ function toggle() {
     var yr= x.getFullYear();
     var h= x.getHours();
     var m= x.getMinutes();
+    if (m < 10)
+        m= "0" + m;
     if (h > 1 && h < 12)
         var t= h + ":" + m + " am";
     else if (h == 12)

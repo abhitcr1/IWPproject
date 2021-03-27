@@ -53,6 +53,14 @@ div#cimg::after {
     right: 1.75%;
     bottom: 2.5%;
 }
+.card-title, .card-mood, .card-text{
+    width: fit-content;
+    margin: 5px;
+    padding: 5px;
+}
+.card-title, .card-mood{
+    border-bottom: 2px solid #444546;
+}
 .top-10 {
     top: 3%;
     bottom: unset;
@@ -66,9 +74,10 @@ div#cimg::after {
     }
     .save{
         right: 3%;
-        bottom: 0;
+        bottom: 2%;
     }    
     .save:hover{
         right: 2.5%;
+        bottom: 1.75%;
     }
 }
