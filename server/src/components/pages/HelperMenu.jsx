@@ -7,7 +7,7 @@ function HelperMenu({ signup, forgot, login }) {
                 <span className="py-1">
                     Already have an account?{" "}
                     <a
-                        href="/"
+                        href="/login"
                         className="text-dark"
                         style={{ fontWeight: 700 }}
                     >

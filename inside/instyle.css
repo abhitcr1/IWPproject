@@ -19,6 +19,7 @@ div#cimg::after {
     top: 0;
     width: inherit;
     height: -webkit-fill-available;
+    max-height: 92vh;
 }
 #cimg svg {
     position: absolute;
@@ -40,30 +41,31 @@ div#cimg::after {
     max-height: 90vh;
     height: auto;
 }
-.save{
+.save {
     width: 40px;
     height: 40px;
     position: absolute;
     right: 2%;
     bottom: 3%;
-    transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s; 
-    cursor: pointer;   
+    transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s;
+    cursor: pointer;
 }
-.save:hover{
+.save:hover {
     width: 45px;
     height: 45px;
     right: 1.75%;
     bottom: 2.5%;
 }
-div > #weather{
+div > #weather {
     position: absolute;
     top: 2%;
-    right: 1.5%; 
+    right: 1.5%;
 }
-.mood-btn button{
+.mood-btn button {
     margin-left: 3px;
 }
-.mood-btn button:focus, .mood-btn button:active{
+.mood-btn button:focus,
+.mood-btn button:active {
     background-color: #8ee6fc;
 }
 .card-text:empty:before {
@@ -76,26 +78,26 @@ div > #weather{
     top: 3%;
     bottom: unset;
 }
-.create:hover{
+.create:hover {
     background-color: #cecdcd;
 }
 @media (max-width: 575px) {
     #cimg svg {
         left: 3%;
-    }    
+    }
     #cimg svg:hover {
         top: 2.75%;
     }
-    .save{
+    .save {
         right: 3%;
         bottom: 2%;
-    }    
-    .save:hover{
+    }
+    .save:hover {
         right: 2.5%;
         bottom: 1.75%;
     }
-    div #weather{
+    div #weather {
         top: 30%;
-        right: 2%; 
+        right: 2%;
     }
 }

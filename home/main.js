@@ -18,6 +18,7 @@ navigator.geolocation.getCurrentPosition(
     }
 );
 $(".picker").flatpickr({
+    disableMobile: true,
     onChange: function (selectedString) {
         console.log(selectedString);
     },

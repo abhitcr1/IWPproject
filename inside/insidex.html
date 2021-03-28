@@ -37,9 +37,7 @@
     </head>
     <body>
         <!-- Bootstrap default Navbar  -->
-        <nav
-            class="navbar navbar-main sticky-top navbar-light navbar-expand-lg"
-        >
+        <nav class="navbar navbar-light navbar-expand-lg">
             <!-- Navbar brand -->
             <div class="container-fluid">
                 <a href="#" class="navbar-brand">
@@ -53,98 +51,105 @@
                     <span class="h5">Diary</span>
                 </a>
 
-                <!-- Hamburger Button -->
-                <div
-                    class="navbar-toggler"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarNav"
-                    aria-controls="navbarNav"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                >
-                    <span class="navbar-toggler-icon"></span>
-                </div>
                 <!-- Navbar Shortcut Links -->
-                <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="" id="navbarNav">
                     <ul class="navbar-nav d-flex w-100 mt-2 mt-lg-0">
                         <form
-                            class="form-inline mx-lg-2 d-flex align-items-center"
+                            class="form-inline mx-lg-2 d-flex align-items-center d-none"
                         >
-                            <div
-                                class="input-group input-group-sm no-border-right mt-3 mt-lg-0"
-                            >
-                                <div class="input-group-text">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="16"
-                                        height="16"
-                                        fill="currentColor"
-                                        class="bi bi-search"
-                                        viewBox="0 0 16 16"
-                                    >
-                                        <path
-                                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
-                                        />
-                                    </svg>
-                                </div>
-
-                                <input
-                                    class="form-control"
-                                    type="text"
-                                    placeholder="Search"
-                                    aria-label="Search"
-                                />
-                            </div>
+                            <label
+                                ><input type="text" id="search-bar" /><span
+                                    class="glyphicon glyphicon-search"
+                                    style="
+                                        padding-right: 3px;
+                                        padding-top: 3px;
+                                        display: inline-block;
+                                    "
+                                    ><img
+                                        src="https://www.pngfind.com/pngs/m/432-4323226_search-icon-transparent-search-button-png-png-download.png"
+                                        alt=""
+                                        style="
+                                            height: 25px;
+                                            display: inline-block;
+                                        " /></span
+                            ></label>
                         </form>
                         <div class="d-block ms-0 d-lg-flex ms-lg-auto">
-                            <!-- Pill for LG viewport -->
-                            <li
-                                class="nav-item d-none d-lg-flex align-items-center mx-lg-2 badge rounded-pill bg-white text-dark shadow-sm"
-                            >
-                                <a href="#" class="nav-link active">
-                                    Anurag Verma
-                                </a>
-                                <img
-                                    src="https://lh3.googleusercontent.com/a-/AOh14GjLl6-teruNiz6KsDh9p7Cx-a6z817FzdiUZY1cbiE=s96-c"
-                                    alt="Anurag Verma"
-                                    class="img-fluid avatar"
-                                    crossorigin="anonymous"
-                                />
-                            </li>
                             <!-- Inline item for other devices -->
-                            <li
-                                class="nav-item d-lg-none d-flex align-items-center mt-2"
-                            >
-                                <a href="#" class="nav-link active">
+
+                            <div class="dropdown">
+                                <a
+                                    class="btn dropdown-toggle badge rounded-pill bg-white text-dark shadow-custom"
+                                    href="#"
+                                    role="button"
+                                    id="dropdownMenuLink"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false"
+                                >
                                     Anurag Verma
+                                    <img
+                                        src="https://lh3.googleusercontent.com/a-/AOh14GjLl6-teruNiz6KsDh9p7Cx-a6z817FzdiUZY1cbiE=s96-c"
+                                        alt="Anurag Verma"
+                                        class="img-fluid avatar"
+                                        crossorigin="anonymous"
+                                    />
                                 </a>
-                                <img
-                                    src="https://lh3.googleusercontent.com/a-/AOh14GjLl6-teruNiz6KsDh9p7Cx-a6z817FzdiUZY1cbiE=s96-c"
-                                    alt="Anurag Verma"
-                                    class="img-fluid avatar"
-                                    crossorigin="anonymous"
-                                />
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link d-flex">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="24"
-                                        height="24"
-                                        fill="currentColor"
-                                        class="bi bi-power"
-                                        viewBox="0 0 16 16"
-                                    >
-                                        <path d="M7.5 1v7h1V1h-1z" />
-                                        <path
-                                            d="M3 8.812a4.999 4.999 0 0 1 2.578-4.375l-.485-.874A6 6 0 1 0 11 3.616l-.501.865A5 5 0 1 1 3 8.812z"
-                                        />
-                                    </svg>
-                                    <span class="d-lg-none d-block mx-3 fw-bold"
-                                        >Logout</span
-                                    >
-                                </a>
-                            </li>
+
+                                <ul
+                                    class="dropdown-menu dropdown-menu-end position-absolute"
+                                    aria-labelledby="dropdownMenuLink"
+                                >
+                                    <li>
+                                        <a
+                                            class="dropdown-item d-flex align-items-center"
+                                            href="#"
+                                        >
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="16"
+                                                height="16"
+                                                fill="currentColor"
+                                                class="mx-1"
+                                                viewBox="0 0 16 16"
+                                            >
+                                                <path
+                                                    d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"
+                                                />
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
+                                                />
+                                            </svg>
+                                            <span>Account</span></a
+                                        >
+                                    </li>
+
+                                    <li>
+                                        <a
+                                            href="#"
+                                            class="dropdown-item d-flex align-items-center"
+                                        >
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="16"
+                                                height="16"
+                                                fill="currentColor"
+                                                class="mx-1"
+                                                viewBox="0 0 16 16"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"
+                                                />
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"
+                                                /></svg
+                                            ><span>Logout</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </ul>
                 </div>
@@ -206,14 +211,18 @@
                                 ></button>
                             </div>
                             <div class="carousel-inner">
-                                <div class="carousel-item active carousel-item-start">
+                                <div
+                                    class="carousel-item active carousel-item-start"
+                                >
                                     <img
                                         src="http://source.unsplash.com/random/1080x1920?q=197297"
                                         class="d-block w-100"
                                         style="height: auto"
                                     />
                                 </div>
-                                <div class="carousel-item carousel-item-next carousel-item-start">
+                                <div
+                                    class="carousel-item carousel-item-next carousel-item-start"
+                                >
                                     <img
                                         src="http://source.unsplash.com/random/1080x1920?q=27286"
                                         class="d-block w-100"
@@ -237,49 +246,134 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-8 col-xs-12">  
-                        <div class="card-body" id= "cbody">                        
-                            <h4 id= "ctitle" class="card-title" contentEditable></h4><hr style="width: 60%;">
-                            <div class="container-fluid d-flex">
-                                <span
-                                    class="badge rounded-pill bg-white bg-gradient text-dark shadow"
-                                    id="weather"
-                                ></span>                                
-                            </div>
-                            <p id= "created" class="text-muted">Created on </p>
-                            <h5 class="card-mood">How do you feel?</h5>
-                            <div class= "mood-btn">
-                                <button type="button" class="btn btn-light happy rounded-pill">&#128522; Happy</button>
-                                <button type="button" class="btn btn-light sad rounded-pill">&#128532; Sad</button>
-                                <button type="button" class="btn btn-light angry rounded-pill">&#128545; Angry</button>
-                                <button type="button" class="btn btn-light stressed rounded-pill">&#128553; Stressed</button>
-                                <button type="button" class="btn btn-light scared rounded-pill">&#128560; Scared</button>
-                            </div>
-                            <br>
-                            <small id= "text-time" class="text-muted m-1"></small>
-                            <p 
-                                id= "text-body" 
-                                class="card-text text-muted border border-gray-400 flex-1 p-2 mr-2"                                
-                                contentEditable
-                                onclick= "empty(this)"
-                                data-placeholder= "Type something here">      
-                                Type something here             
-                            </p>         
-                            <button type="button" class="btn btn-light create rounded-pill" onclick= "createbox ()">
-                                <p class="add m-0">
-                                <svg 
-                                    xmlns="http://www.w3.org/2000/svg" 
-                                    width="20" 
-                                    height="20" 
-                                    fill="#0d6efd"                                     
-                                    class="bi bi-plus"                                    
-                                    viewBox="0 0 16 16">                                    
-                                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                    <div class="col-sm-8 col-xs-12">
+                        <div class="card-body" id="cbody">
+                            <h4
+                                id="ctitle"
+                                class="card-title"
+                                contenteditable
+                            ></h4>
+                            <div class="d-flex align-items-center">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="12"
+                                    height="12"
+                                    fill="#128532"
+                                    class="bi bi-geo-alt-fill"
+                                    viewBox="0 0 16 16"
+                                >
+                                    <path
+                                        d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"
+                                    />
                                 </svg>
+                                <span class="mx-1">Muzaffarpur</span>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="12"
+                                    height="12"
+                                    fill="#49c3e0"
+                                    class="bi bi-cloud-drizzle-fill"
+                                    viewBox="0 0 16 16"
+                                >
+                                    <path
+                                        d="M4.158 12.025a.5.5 0 0 1 .316.633l-.5 1.5a.5.5 0 0 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.317zm6 0a.5.5 0 0 1 .316.633l-.5 1.5a.5.5 0 0 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.317zm-3.5 1.5a.5.5 0 0 1 .316.633l-.5 1.5a.5.5 0 0 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.317zm6 0a.5.5 0 0 1 .316.633l-.5 1.5a.5.5 0 1 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.317zm.747-8.498a5.001 5.001 0 0 0-9.499-1.004A3.5 3.5 0 1 0 3.5 11H13a3 3 0 0 0 .405-5.973z"
+                                    />
+                                </svg>
+                                <span class="mx-1">33.35 °C, Clear</span>
+                            </div>
+                            <p id="created" class="text-muted">Created on</p>
+                            <h5 class="card-mood">How do you feel?</h5>
+                            <div class="mood-btn">
+                                <button
+                                    type="button"
+                                    class="btn btn-light happy rounded-pill active"
+                                >
+                                    &#128522; Happy
+                                </button>
+                                <button
+                                    type="button"
+                                    class="btn btn-light sad rounded-pill"
+                                >
+                                    &#128532; Sad
+                                </button>
+                                <button
+                                    type="button"
+                                    class="btn btn-light angry rounded-pill"
+                                >
+                                    &#128545; Angry
+                                </button>
+                                <button
+                                    type="button"
+                                    class="btn btn-light stressed rounded-pill"
+                                >
+                                    &#128553; Stressed
+                                </button>
+                                <button
+                                    type="button"
+                                    class="btn btn-light scared rounded-pill"
+                                >
+                                    &#128560; Scared
+                                </button>
+                            </div>
+                            <br />
+                            <small class="text-muted">02:20 am</small>
+                            <p
+                                id="text-body"
+                                class="card-text flex-1 py-2 mr-2"
+                                contenteditable
+                                onclick="empty(this)"
+                                data-placeholder="Type something here"
+                            >
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Suspendisse diam risus,
+                                ultricies vitae orci in, accumsan vehicula ex.
+                                Interdum et malesuada fames ac ante ipsum primis
+                                in faucibus. Aenean accumsan, nulla eget posuere
+                                bibendum, lectus erat pulvinar diam, eu semper
+                                tellus nunc sed lacus. Vivamus tortor ipsum,
+                                euismod at pharetra vel, sollicitudin sit amet
+                                sapien. Fusce ut nulla augue. Sed pulvinar eros
+                                risus, et porttitor est euismod vel. Fusce sed
+                                elit at mauris laoreet tincidunt non vitae est.
+                                Mauris sit amet aliquam elit. Quisque ante sem,
+                                ultricies at hendrerit nec, gravida et nisl.
+                                Orci varius natoque penatibus et magnis dis
+                                parturient montes, nascetur ridiculus mus.
+                            </p>
+                            <small id="text-time" class="text-muted"></small>
+                            <p
+                                id="text-body"
+                                class="card-text flex-1 py-2 mr-2"
+                                contenteditable
+                                onclick="empty(this)"
+                                data-placeholder="Type something here"
+                            >
+                                What's on your mind? Type your thoughts here.
+                            </p>
+                            <!-- <button
+                                type="button"
+                                class="btn btn-light create rounded-pill"
+                                onclick="createbox()"
+                            >
+                                <p class="add m-0">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="20"
+                                        height="20"
+                                        fill="#0d6efd"
+                                        class="bi bi-plus"
+                                        viewBox="0 0 16 16"
+                                    >
+                                        <path
+                                            d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+                                        />
+                                    </svg>
                                     Add new text
                                 </p>
                             </button>
-                            <br><br>
+                            <br /><br /> -->
                             <!-- <script>
                                 $(document).ready(function(){
                                   $("#text-body").click(function(){
@@ -288,17 +382,19 @@
                                 });
                                 </script> -->
                             <p class="card-saved">
-                                <small id= "update" class="text-muted"></small>
+                                <small id="update" class="text-muted"></small>
                             </p>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="#49c3e0"
                                 class="save bi bi-check-circle-fill rounded-pill shadow"
                                 onclick="toggle()"
-                                viewBox="0 0 16 16">
+                                viewBox="0 0 16 16"
+                            >
                                 <path
                                     d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"
-                            /></svg >
+                                />
+                            </svg>
                         </div>
                     </div>
                 </div>

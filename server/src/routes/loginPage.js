@@ -16,23 +16,6 @@ router.get("/", (req, res) => {
 
 router.post("/", (req, res) => {
     const { email, password } = req.body;
-    if (!email || !password) return res.redirect("/");
-    if (email != "anurag@anurag.com")
-        return res.render("react-template.html", {
-            reactApp: renderToString(<LoginPage />),
-            email: email,
-            emailFound: false,
-            page: "loginPage",
-            password: false,
-        });
-    if (password != "123456")
-        return res.render("react-template.html", {
-            reactApp: renderToString(<LoginPage />),
-            email: email,
-            emailFound: true,
-            page: "loginPage",
-            password: true,
-        });
-    return res.send("Logged IN");
+    return res.redirect("/");
 });
 module.exports = router;

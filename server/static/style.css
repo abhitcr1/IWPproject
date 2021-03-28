@@ -1,21 +1,55 @@
 body {
     font-family: "Montserrat", sans-serif;
-    background: #f1f3f6;
+    background: #ffffff;
 }
 @media only screen and (max-width: 992px) {
     .navbar.navbar-main {
         background-color: #f8f9fa;
     }
-    .w-sm-100 {
-        width: 100% !important;
-    }
 }
-.dark-hover {
-    transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+/* width */
+::-webkit-scrollbar {
+    height: 3px;
+    width: 3px;
 }
-.dark-hover:hover {
-    color: #000000 !important;
+:focus {
+    outline: none;
 }
+
+.mood-btn > button {
+    box-shadow: 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
+    font-size: 0.8em;
+}
+.mood-btn > button.active {
+    border: 1px solid #49c3e0;
+    box-shadow: 4px 4px 4px #49c3e06b;
+    background: #13cefb80;
+}
+input {
+    border: 2px solid whitesmoke;
+    border-radius: 20px;
+    padding: 12px 10px;
+    text-align: center;
+    width: 250px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    /* box-shadow: inset 0 0 5px grey; */
+    border-radius: 20px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #212529;
+    border-radius: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #000000;
+}
+
 .avatar {
     width: 26px;
     height: 26px;
@@ -34,8 +68,8 @@ body {
     border-color: #ced4da;
 }
 .weather-img {
-    width: 30px;
-    height: 30px;
+    width: 30px !important;
+    height: 30px !important;
 }
 .pill {
     padding: 0.4rem;
@@ -74,20 +108,188 @@ body {
 .card-width {
     height: -webkit-fill-available;
     display: inline-block;
+    position: relative;
+    width: 20em;
 }
-.card-width > img {
+.overlay {
+    position: absolute;
+    display: block;
+    color: #fff;
+    width: -webkit-fill-available;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    background-image: linear-gradient(180deg, #000000d8, transparent);
+    top: 0;
+    min-width: fit-content;
+    flex-direction: column;
+}
+.card-width img {
     height: 100%;
     width: 100%;
 }
-.fs {
-    height: 100vh !important;
+.shadow-custom {
+    box-shadow: 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
 }
-.form-check-input:checked {
-    background-color: #000000;
-    border-color: #000000;
+body {
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f1f3f6;
 }
-.form-check-input:focus,
-.form-control:focus {
-    border-color: #000000;
-    box-shadow: 0 0 0 0.25rem rgb(0 0 0 / 25%);
+
+label {
+    position: relative;
+    cursor: pointer;
+}
+
+.search-icon:before {
+    content: "\f002";
+    position: absolute;
+    left: 16px;
+    top: 16px;
+    right: 16px;
+    bottom: 0px;
+    font-family: "FontAwesome";
+    color: #828e9e;
+}
+
+input {
+    width: 16px;
+    height: 16px;
+    border: none;
+    outline: none;
+    padding: 16px;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: 0.5s;
+    color: #a3acc4;
+    background-color: #fff;
+    caret-color: #828e9e;
+    caret-width: 2px;
+}
+
+input:hover {
+    cursor: pointer;
+}
+
+input:focus {
+    width: 50vw;
+    box-shadow: 0px 5px 25px -5px rgba(215, 215, 215, 100%);
+}
+
+input:focus ~ .search-icon {
+    transition: 0.1s;
+    opacity: 0;
+}
+
+@media only screen and (max-width: 400px) {
+    input:focus {
+        width: 50vw;
+        transition: 0.5s;
+    }
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+}
+#cimg {
+    max-height: 90vh;
+    height: auto;
+    overflow: hidden;
+}
+div#cimg::after {
+    content: "";
+    background-image: linear-gradient(
+        180deg,
+        #00000078,
+        transparent,
+        transparent
+    );
+    position: absolute;
+    top: 0;
+    width: inherit;
+    height: -webkit-fill-available;
+    max-height: 92vh;
+}
+#cimg svg {
+    position: absolute;
+    left: 1%;
+    z-index: 99;
+    top: 1.5%;
+    fill: #212529;
+    background-color: #ffffff;
+    transition: all cubic-bezier(0.165, 0.84, 0.44, 1) 0.3s;
+}
+#cimg svg:hover {
+    width: 40px;
+    height: 40px;
+    top: 1.25%;
+    left: 0.75%;
+}
+.card-body {
+    overflow-y: scroll;
+    max-height: 90vh;
+    height: auto;
+}
+.save {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 2%;
+    bottom: 3%;
+    transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s;
+    cursor: pointer;
+}
+.save:hover {
+    width: 45px;
+    height: 45px;
+    right: 1.75%;
+    bottom: 2.5%;
+}
+div > #weather {
+    position: absolute;
+    top: 2%;
+    right: 1.5%;
+}
+.mood-btn button {
+    margin-left: 3px;
+}
+.mood-btn button:focus,
+.mood-btn button:active {
+    background-color: #8ee6fc;
+}
+.card-text:empty:before {
+    content: attr(data-placeholder);
+}
+.card-title::first-letter {
+    font-size: 130%;
+}
+.top-10 {
+    top: 3%;
+    bottom: unset;
+}
+.create:hover {
+    background-color: #cecdcd;
+}
+@media (max-width: 575px) {
+    #cimg svg {
+        left: 3%;
+    }
+    #cimg svg:hover {
+        top: 2.75%;
+    }
+    .save {
+        right: 3%;
+        bottom: 2%;
+    }
+    .save:hover {
+        right: 2.5%;
+        bottom: 1.75%;
+    }
+    div #weather {
+        top: 30%;
+        right: 2%;
+    }
 }
