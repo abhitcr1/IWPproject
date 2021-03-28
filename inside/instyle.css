@@ -94,8 +94,8 @@ div > #weather{
         right: 2.5%;
         bottom: 1.75%;
     }
-    div > #weather{
-        top: 60%;
+    div #weather{
+        top: 30%;
         right: 2%; 
     }
 }
