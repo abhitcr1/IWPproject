@@ -32,6 +32,7 @@
         <!-- Custom Imports -->
         <link rel="stylesheet" href="../home/style.css" />
         <link rel="stylesheet" href="./instyle.css" />
+        <script src="../home/main.js" defer></script>
         <script src="./inmain.js" defer></script>
     </head>
     <body>
@@ -237,28 +238,58 @@
                         </div>
                     </div>
                     <div class="col-sm-8 col-xs-12">  
-                        <div class="card-body">                                   
-                            <h4 class="card-title" contentEditable= "true">Card Heading</h4>
-                            <h5 class="card-mood">Mood</h5>
-                            <form>
-                                <input type="radio" id="happy" name="mood" value="happy">
-                                <label for="happy">Happy &#128522;</label>
-                                <input type="radio" id="sad" name="mood" value="sad">
-                                <label for="sad">Sad &#128532;</label>
-                                <input type="radio" id="angry" name="mood" value="angry">
-                                <label for="angry">Angry &#128545;</label>
-                                <input type="radio" id="stressed" name="mood" value="stressed">
-                                <label for="stressed">Stressed &#128553;</label>
-                                <input type="radio" id="fear" name="mood" value="fear">
-                                <label for="fear">Fear &#128560;</label>
-                              </form>
+                        <div class="card-body" id= "cbody">                        
+                            <h4 id= "ctitle" class="card-title" contentEditable></h4><hr style="width: 60%;">
+                            <div class="container-fluid d-flex">
+                                <span
+                                    class="badge rounded-pill bg-white bg-gradient text-dark shadow"
+                                    id="weather"
+                                >
+                                </span>                                
+                            </div>
+                            <p id= "created" class="text-muted">Created on </p>
+                            <h5 class="card-mood">How do you feel?</h5>
+                            <div class= "mood-btn">
+                                <button type="button" class="btn btn-light happy rounded-pill">&#128522; Happy</button>
+                                <button type="button" class="btn btn-light sad rounded-pill">&#128532; Sad</button>
+                                <button type="button" class="btn btn-light angry rounded-pill">&#128545; Angry</button>
+                                <button type="button" class="btn btn-light stressed rounded-pill">&#128553; Stressed</button>
+                                <button type="button" class="btn btn-light scared rounded-pill">&#128560; Scared</button>
+                            </div>
                             <br>
-                            <p class="card-text shadow" contentEditable= "true">
-                                
-                            </p><br>
+                            <small id= "text-time" class="text-muted m-1"></small>
+                            <p 
+                                id= "text-body" 
+                                class="card-text text-muted border border-gray-400 flex-1 p-2 mr-2"                                
+                                contentEditable
+                                onclick= "empty(this)"
+                                data-placeholder= "Type something here">      
+                                Type something here             
+                            </p>         
+                            <button type="button" class="btn btn-light create rounded-pill" onclick= "createbox ()">
+                                <p class="add m-0">
+                                <svg 
+                                    xmlns="http://www.w3.org/2000/svg" 
+                                    width="20" 
+                                    height="20" 
+                                    fill="#0d6efd"                                     
+                                    class="bi bi-plus"                                    
+                                    viewBox="0 0 16 16">                                    
+                                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                                </svg>
+                                    Add new text
+                                </p>
+                            </button>
+                            <br><br>
+                            <!-- <script>
+                                $(document).ready(function(){
+                                  $("#text-body").click(function(){
+                                    $("p").removeClass("text-muted");
+                                  });
+                                });
+                                </script> -->
                             <p class="card-saved">
-                                <small id= "update" class="text-muted">                                    
-                                </small>
+                                <small id= "update" class="text-muted"></small>
                             </p>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
