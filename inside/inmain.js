@@ -73,14 +73,3 @@ document.getElementById("created").innerHTML =
 
 document.getElementById("text-time").innerHTML = t;
 
-// function createbox(){
-//     var box = document.createElement("P");
-//     box.innerHTML = "Type something here";
-//     document.getElementsByClassName("card-text").appendChild(box);
-// }
-
-// $(document).ready(function(){
-//     $(".create").click(function(){
-//       $("").addClass("card-text text-muted border border-gray-400 flex-1 p-2 mr-2");
-//     });
-//   });

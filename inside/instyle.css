@@ -61,9 +61,6 @@ div > #weather {
     top: 2%;
     right: 1.5%;
 }
-.mood-btn button {
-    margin-left: 3px;
-}
 .mood-btn button:focus,
 .mood-btn button:active {
     background-color: #8ee6fc;
