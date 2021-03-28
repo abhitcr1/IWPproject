@@ -248,11 +248,7 @@ div#cimg::after {
     right: 1.75%;
     bottom: 2.5%;
 }
-div > #weather {
-    position: absolute;
-    top: 2%;
-    right: 1.5%;
-}
+
 .mood-btn button {
     margin-left: 3px;
 }
