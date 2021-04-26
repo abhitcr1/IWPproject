@@ -37,6 +37,9 @@ function Input({
                     required
                 />
                 <div className="invalid-feedback">{error}</div>
+                <div className="valid-feedback">
+                    Signup Successfull! Login to Continue.
+                </div>
             </div>
         </div>
     );

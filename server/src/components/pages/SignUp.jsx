@@ -18,15 +18,15 @@ function SignUp() {
                         <Input
                             type="text"
                             label="Your Name"
-                            placeholder="I am Batman"
-                            type="text"
+                            placeholder="Bruce Wayne"
+                            name="name"
                         />
                         <Input
                             name="email"
                             label="Email Address"
                             placeholder="example@example.com"
                             type="email"
-                            errorMessage="Can't find this email in database. Did you mean to signup?"
+                            errorMessage="This email is already in use. Did you mean to login?"
                             invalidErrorMessage="This email doesn't seem to be correct"
                         />
                         <Input

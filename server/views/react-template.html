@@ -37,6 +37,7 @@
         $(document).ready(function () {
             <% if(email) {%>$("#email").val("<%- email %>"); <% } %>
             <% if(password) {%>$("#password").addClass("is-invalid") <% } %>
+            <% if(redirect) {%>$("#email").addClass("is-valid") <% } %>
             <% if(!emailFound) {%> $("#email").addClass("is-invalid") <% } %>
             $(".carousel").carousel({
                 interval: 4000,

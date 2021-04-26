@@ -1,20 +1,41 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const cookieParser = require("cookie-parser");
+const mongoose = require("mongoose");
 
-const path = require("path");
+require("dotenv").config();
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+mongoose.connect(process.env.MONGODB, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+});
+
+const connection = mongoose.connection;
+
+connection.once("open", () => {
+    console.log("MongoDB connection successfull");
+});
+connection.on("error", (err) => {
+    console.log("MongoDB failed with:", err);
+});
+
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(cookieParser());
+
 app.set("views", "views");
 app.engine("html", require("ejs").renderFile);
 app.use(express.static("static"));
 
 app.use("/", require("./routes/home"));
 app.use("/edit", require("./routes/edit"));
-app.use("/login", require("./routes/loginPage"));
+app.use("/login", require("./routes/LogIn"));
 app.use("/signup", require("./routes/SignUp"));
+app.use("/logout", require("./routes/logout"));
 app.use("/api", require("./routes/api/getEnabledDates"));
 app.use("/api", require("./routes/api/getEntry"));
 app.listen(PORT, () => console.log(`Listening on PORT: ${PORT}`));
