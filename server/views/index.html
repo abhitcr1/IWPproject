@@ -4,6 +4,6 @@
     <body>
         <%- include('partials/nav.html', {name: name})%> <% if(page=='home') {
         %> <%-include('partials/home.html')%> %> <% } %> <% if(page=='edit') {
-        %> <%-include('partials/edit.html')%> %> <% } %>
+        %> <%-include('partials/edit.html'), {doc: doc}%> %> <% } %>
     </body>
 </html>
