@@ -1,86 +1,77 @@
-function toggle() {
-    var x = new Date(document.lastModified);
-    var months = [
-        "Jan",
-        "Feb",
-        "Mar",
-        "Apr",
-        "May",
-        "Jun",
-        "Jul",
-        "Aug",
-        "Sep",
-        "Oct",
-        "Nov",
-        "Dec",
-    ];
-    var days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-    var d = days[x.getDay()];
-    var mnt = months[x.getMonth()];
-    var dt = x.getDate();
-    var yr = x.getFullYear();
-    var h = x.getHours();
-    var m = x.getMinutes();
-    if (m < 10) m = "0" + m;
-    if (h < 10) h = "0" + h;
-    if (h > 0 && h < 12) var t = h + ":" + m + " am";
-    else if (h == 12) var t = 12 + ":" + m + " pm";
-    else if (h > 12) var t = h - 12 + ":" + m + " pm";
-    else var t = 12 + ":" + m + " am";
-    document.getElementById("update").innerHTML =
-        "Last updated on " + d + " " + mnt + " " + dt + ", " + yr + " | " + t;
-}
+document.getElementById("text-time").innerHTML =
+    new Date().toLocaleTimeString();
+$(document).ready(function () {
+    $(".carousel").carousel({
+        interval: 4000,
+    });
 
-function empty(obj) {
-    if (obj.innerText == "What's on your mind? Type your thoughts here.")
-        obj.innerHTML = "";
-    obj.style.color = "black !important";
-}
+    // To change mood
+    $(".mood-btn > button").on("click", (e) => {
+        $(".mood-btn > button.active").removeClass("active");
+        $(e.target).addClass("active");
+    });
 
-var x = new Date();
-var msg = document.getElementById("created").innerHTML;
-var months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-];
-var days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-var d = days[x.getDay()];
-var mnt = months[x.getMonth()];
-var dt = x.getDate();
-var yr = x.getFullYear();
-var h = x.getHours();
-var m = x.getMinutes();
-if (m < 10) m = "0" + m;
-if (h < 10) h = "0" + h;
-if (h > 0 && h < 12) var t = h + ":" + m + " am";
-else if (h == 12) var t = 12 + ":" + m + " pm";
-else if (h > 12) var t = h - 12 + ":" + m + " pm";
-else var t = 12 + ":" + m + " am";
-document.getElementById("ctitle").innerHTML =
-    months[x.getMonth()] + " " + x.getDate() + ", " + x.getFullYear();
-document.getElementById("created").innerHTML =
-    msg + " " + mnt + " " + dt + " " + yr + " at " + t;
+    $("#text-body").on("click", (e) => {
+        if (
+            e.target.innerText ==
+            "What's on your mind? Type your thoughts here."
+        )
+            e.target.innerText = "";
+    });
 
-document.getElementById("text-time").innerHTML = t;
-
-// function createbox(){
-//     var box = document.createElement("P");
-//     box.innerHTML = "Type something here";
-//     document.getElementsByClassName("card-text").appendChild(box);
-// }
-
-// $(document).ready(function(){
-//     $(".create").click(function(){
-//       $("").addClass("card-text text-muted border border-gray-400 flex-1 p-2 mr-2");
-//     });
-//   });
+    $("#save").on("click", () => {
+        navigator.geolocation.getCurrentPosition((data) => {
+            const lat = data.coords.latitude;
+            const long = data.coords.longitude;
+            $.ajax({
+                url: `https://api.openweathermap.org/data/2.5/forecast?units=metric&APPID=222905522bd2c16bfe46234ced76263f&lat=${lat}&lon=${long}`,
+                method: "GET",
+                success: function (data) {
+                    $("#locationN").text(data.city.name);
+                    $("#weatherN").text(
+                        `${data.list[0].main.temp} °C, ${data.list[0].weather[0].main}`
+                    );
+                    const mood = $(".mood-btn > button.active")
+                        .attr("class")
+                        ?.split("my-1 ")[1]
+                        ?.split(" ")[0];
+                    const title = $("#ctitle").text();
+                    const weather = $("#weatherN").text();
+                    const location = $("#locationN").text();
+                    const newEntry =
+                        $("#text-body").text() ==
+                        "What's on your mind? Type your thoughts here."
+                            ? undefined
+                            : $("#text-body").text();
+                    let old = [];
+                    $("#editable p")
+                        .toArray()
+                        .forEach((el, idx) => {
+                            old.push({
+                                index: idx,
+                                entry: el.innerText,
+                                time: $(el).attr("data-time"),
+                            });
+                        });
+                    const payload = {
+                        mood,
+                        title,
+                        weather,
+                        location,
+                        newEntry,
+                        oldEntry: old,
+                    };
+                    $.ajax({
+                        url: window.location.url,
+                        method: "POST",
+                        json: true,
+                        data: payload,
+                        success: function (response) {
+                            window.location.reload();
+                        },
+                    });
+                },
+            });
+        });
+    });
+});

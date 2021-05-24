@@ -85,7 +85,7 @@ input {
     border-radius: 25px;
     width: 6rem;
 }
-.pill:hover > .pill-text {
+.pill:hover .pill-text {
     display: block;
     font-size: inherit;
 }

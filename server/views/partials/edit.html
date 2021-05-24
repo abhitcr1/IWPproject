@@ -62,7 +62,11 @@
                             />
                         </div>
                         <div
-                            class="carousel-item carousel-item-next carousel-item-start"
+                            class="
+                                carousel-item
+                                carousel-item-next
+                                carousel-item-start
+                            "
                         >
                             <img
                                 src="http://source.unsplash.com/random/1080x1920?q=27286"
@@ -89,7 +93,8 @@
             </div>
             <div class="col-sm-8 col-xs-12">
                 <div class="card-body" id="cbody">
-                    <h4 id="ctitle" class="card-title" contenteditable></h4>
+                    <!-- prettier-ignore -->
+                    <h4 id="ctitle" class="card-title" contenteditable><%= doc.title %></h4>
                     <div class="d-flex align-items-center">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -103,7 +108,9 @@
                                 d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"
                             />
                         </svg>
-                        <span class="mx-1">Muzaffarpur</span>
+                        <span class="mx-1" id="locationN"
+                            ><%= doc.location || "Loading" %></span
+                        >
                     </div>
                     <div class="d-flex align-items-center">
                         <svg
@@ -118,112 +125,91 @@
                                 d="M4.158 12.025a.5.5 0 0 1 .316.633l-.5 1.5a.5.5 0 0 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.317zm6 0a.5.5 0 0 1 .316.633l-.5 1.5a.5.5 0 0 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.317zm-3.5 1.5a.5.5 0 0 1 .316.633l-.5 1.5a.5.5 0 0 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.317zm6 0a.5.5 0 0 1 .316.633l-.5 1.5a.5.5 0 1 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.317zm.747-8.498a5.001 5.001 0 0 0-9.499-1.004A3.5 3.5 0 1 0 3.5 11H13a3 3 0 0 0 .405-5.973z"
                             />
                         </svg>
-                        <span class="mx-1">33.35 °C, Clear</span>
+                        <span class="mx-1" id="weatherN"
+                            ><%= doc.weather || "Loading" %></span
+                        >
                     </div>
-                    <p id="created" class="text-muted">Created on</p>
+                    <p id="created" class="text-muted">
+                        Created on <%= new Date(doc.createdAt).toDateString() %>
+                        at <%= new Date(doc.createdAt).toLocaleTimeString() %>
+                    </p>
                     <h5 class="card-mood">How do you feel?</h5>
+                    <!-- prettier-ignore -->
                     <div class="mood-btn">
                         <button
                             type="button"
-                            class="btn btn-light my-1 happy rounded-pill active"
+                            class="
+                                btn btn-light
+                                my-1
+                                happy
+                                rounded-pill
+                                <% if(doc.mood=='happy'){%> active <% } %>
+                            "
                         >
                             &#128522; Happy
                         </button>
                         <button
                             type="button"
-                            class="btn btn-light my-1 sad rounded-pill"
+                            class="btn btn-light my-1 sad rounded-pill <% if(doc.mood=='sad'){%> active <% } %>"
                         >
                             &#128532; Sad
                         </button>
                         <button
                             type="button"
-                            class="btn btn-light my-1 angry rounded-pill"
+                            class="btn btn-light my-1 angry rounded-pill <% if(doc.mood=='angry'){%> active <% } %>"
                         >
                             &#128545; Angry
                         </button>
                         <button
                             type="button"
-                            class="btn btn-light my-1 stressed rounded-pill"
+                            class="btn btn-light my-1 stressed rounded-pill <% if(doc.mood=='stressed'){%> active <% } %>"
                         >
                             &#128553; Stressed
                         </button>
                         <button
                             type="button"
-                            class="btn btn-light my-1 scared rounded-pill"
+                            class="btn btn-light my-1 scared rounded-pill <% if(doc.mood=='scared'){%> active <% } %>"
                         >
                             &#128560; Scared
                         </button>
                     </div>
                     <br />
-                    <small class="text-muted">02:20 am</small>
-                    <p
-                        id="text-body"
-                        class="card-text flex-1 py-2 mr-2"
-                        contenteditable
-                        onclick="empty(this)"
-                        data-placeholder="Type something here"
-                    >
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Suspendisse diam risus, ultricies vitae orci in,
-                        accumsan vehicula ex. Interdum et malesuada fames ac
-                        ante ipsum primis in faucibus. Aenean accumsan, nulla
-                        eget posuere bibendum, lectus erat pulvinar diam, eu
-                        semper tellus nunc sed lacus. Vivamus tortor ipsum,
-                        euismod at pharetra vel, sollicitudin sit amet sapien.
-                        Fusce ut nulla augue. Sed pulvinar eros risus, et
-                        porttitor est euismod vel. Fusce sed elit at mauris
-                        laoreet tincidunt non vitae est. Mauris sit amet aliquam
-                        elit. Quisque ante sem, ultricies at hendrerit nec,
-                        gravida et nisl. Orci varius natoque penatibus et magnis
-                        dis parturient montes, nascetur ridiculus mus.
-                    </p>
-                    <small id="text-time" class="text-muted"></small>
-                    <p
-                        id="text-body"
-                        class="card-text flex-1 py-2 mr-2"
-                        contenteditable
-                        onclick="empty(this)"
-                        data-placeholder="Type something here"
-                    >
-                        What's on your mind? Type your thoughts here.
-                    </p>
-                    <!-- <button
-                        type="button"
-                        class="btn btn-light create rounded-pill"
-                        onclick="createbox()"
-                    >
-                        <p class="add m-0">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="20"
-                                height="20"
-                                fill="#0d6efd"
-                                class="bi bi-plus"
-                                viewBox="0 0 16 16"
-                            >
-                                <path
-                                    d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
-                                />
-                            </svg>
-                            Add new text
+                    <div id="editable">
+                        <% for(var i=0; i< doc.entries.length; i++) {%>
+                        <small class="text-muted"
+                            ><%= new
+                            Date(doc.entries[i].time).toLocaleTimeString()
+                            %></small
+                        >
+                        <p
+                            class="card-text flex-1 py-2 mr-2 mb-0"
+                            contenteditable
+                            data-time="<%=doc.entries[i].time%>"
+                        >
+                            <%= doc.entries[i].data %>
                         </p>
-                    </button>
-                    <br /><br /> -->
-                    <!-- <script>
-                        $(document).ready(function(){
-                          $("#text-body").click(function(){
-                            $("p").removeClass("text-muted");
-                          });
-                        });
-                        </script> -->
+                        <% } %>
+                    </div>
+                    <small id="text-time" class="text-muted"></small>
+                    <!-- prettier-ignore -->
+                    <p
+                        id="text-body"
+                        class="card-text flex-1 py-2 mr-2"
+                        contenteditable
+                    >What's on your mind? Type your thoughts here.</p>
                     <p class="card-saved">
-                        <small id="update" class="text-muted"></small>
+                        <% if(doc.updatedAt !== doc.createdAt){ %>
+                        <small id="update" class="text-muted"
+                            >Last Update on <%= new
+                            Date(doc.updatedAt).toDateString() %> at <%= new
+                            Date(doc.updatedAt).toLocaleTimeString() %></small
+                        ><% } %>
                     </p>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="#49c3e0"
                         class="save bi bi-check-circle-fill rounded-pill shadow"
-                        onclick="toggle()"
+                        id="save"
                         viewBox="0 0 16 16"
                     >
                         <path
@@ -235,12 +221,4 @@
         </div>
     </div>
 </div>
-<script>
-    $(document).ready(function () {
-        console.log("Trigger Carousel");
-        $(".carousel").carousel({
-            interval: 4000,
-        });
-    });
-</script>
-<script src="./editor.js"></script>
+<script src="/editor.js"></script>
