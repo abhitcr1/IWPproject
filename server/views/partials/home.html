@@ -148,3 +148,13 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!--  Flatpickr  -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.js"></script>
+<script>
+    const dateTable = {<% dates.forEach(element => { %>  "<%= element.createdAt.toLocaleDateString("en-in")%>"  : "<%=element._id%>", <% }) %>}
+    $(".picker").flatpickr({
+        disableMobile: true,
+        onChange: function (selectedString) {
+            window.location = `/edit/${dateTable[new Date(selectedString).toLocaleDateString("en-in")]}`;
+        },
+        enable: [<% dates.forEach(element => { %>new Date("<%=  element.createdAt%>"),<% }) %>],
+    });
+</script>

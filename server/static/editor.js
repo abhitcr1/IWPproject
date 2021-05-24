@@ -1,5 +1,6 @@
-document.getElementById("text-time").innerHTML =
-    new Date().toLocaleTimeString();
+document.getElementById("text-time").innerHTML = new Date().toLocaleTimeString(
+    "en-in"
+);
 $(document).ready(function () {
     $(".carousel").carousel({
         interval: 4000,

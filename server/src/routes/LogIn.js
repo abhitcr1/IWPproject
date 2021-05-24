@@ -34,7 +34,7 @@ router.get("/", PreventReAuth, async (req, res) => {
 });
 
 router.post("/", PreventReAuth, async (req, res) => {
-    const { email, password, save } = req.body;
+    const { email, password, remember } = req.body;
     const user = await User.findOne({ email: email });
     if (!user) {
         return res.render("react-template.html", {
@@ -62,9 +62,9 @@ router.post("/", PreventReAuth, async (req, res) => {
             jwt.sign(
                 { email: req.body["email"], _id: user._id },
                 process.env.SECRET,
-                { expiresIn: save === "on" ? "30d" : "30m" }
+                { expiresIn: remember === "on" ? "30 days" : "30m" }
             ),
-            { maxAge: save === "on" ? 30 * 86400000 : 30 * 60000 }
+            { maxAge: remember === "on" ? 30 * 86400000 : 30 * 60000 }
         )
         .redirect("/");
 });

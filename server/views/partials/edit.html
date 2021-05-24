@@ -25,63 +25,38 @@
                     data-ride="carousel"
                     style="height: inherit"
                 >
+                    <!-- prettier-ignore -->
                     <div class="carousel-indicators top-10">
+                        <% if(doc.images.lenght) { %> 
+                            <% doc.images.forEach((el, idx)=>{ %>
+                                <button
+                                   type="button"
+                                    data-bs-target="#cars-intro"
+                                    data-bs-slide-to="<%= idx %>"
+                                    aria-label="Slide <%= idx %>"
+                                ></button>
+                            <% }) %>
+                        <% } %>
                         <button
                             type="button"
                             data-bs-target="#cars-intro"
-                            data-bs-slide-to="0"
-                            aria-label="Slide 1"
+                            data-bs-slide-to="<%= doc.images.lenght %>"
+                            aria-label="Slide <%= doc.images.lenght %>"
                             class="active"
-                        ></button
-                        ><button
-                            type="button"
-                            data-bs-target="#cars-intro"
-                            data-bs-slide-to="1"
-                            aria-label="Slide 2"
-                            aria-current="true"
-                        ></button
-                        ><button
-                            type="button"
-                            data-bs-target="#cars-intro"
-                            data-bs-slide-to="2"
-                            aria-label="Slide 3"
-                        ></button>
-                        <button
-                            type="button"
-                            data-bs-target="#cars-intro"
-                            data-bs-slide-to="3"
-                            aria-label="Slide 3"
                         ></button>
                     </div>
                     <div class="carousel-inner">
-                        <div class="carousel-item active carousel-item-start">
+                        <% if(doc.images.lenght) { %> <% doc.images.forEach((el,
+                        idx)=>{ %>
+                        <div class="carousel-item carousel-item-start">
                             <img
-                                src="http://source.unsplash.com/random/1080x1920?q=197297"
+                                src="el"
                                 class="d-block w-100"
                                 style="height: auto"
                             />
                         </div>
-                        <div
-                            class="
-                                carousel-item
-                                carousel-item-next
-                                carousel-item-start
-                            "
-                        >
-                            <img
-                                src="http://source.unsplash.com/random/1080x1920?q=27286"
-                                class="d-block w-100"
-                                style="height: auto"
-                            />
-                        </div>
-                        <div class="carousel-item">
-                            <img
-                                src="http://source.unsplash.com/random/1080x1920?q=87927927"
-                                class="d-block w-100"
-                                style="height: auto"
-                            />
-                        </div>
-                        <div class="carousel-item">
+                        <% }) %> <% } %>
+                        <div class="carousel-item active">
                             <img
                                 src="http://source.unsplash.com/random/1080x1920?q=9796"
                                 class="d-block w-100"
@@ -131,7 +106,8 @@
                     </div>
                     <p id="created" class="text-muted">
                         Created on <%= new Date(doc.createdAt).toDateString() %>
-                        at <%= new Date(doc.createdAt).toLocaleTimeString() %>
+                        at <%= new
+                        Date(doc.createdAt).toLocaleTimeString("en-in") %>
                     </p>
                     <h5 class="card-mood">How do you feel?</h5>
                     <!-- prettier-ignore -->
@@ -178,7 +154,7 @@
                         <% for(var i=0; i< doc.entries.length; i++) {%>
                         <small class="text-muted"
                             ><%= new
-                            Date(doc.entries[i].time).toLocaleTimeString()
+                            Date(doc.entries[i].time).toLocaleTimeString("en-in")
                             %></small
                         >
                         <p
@@ -202,7 +178,8 @@
                         <small id="update" class="text-muted"
                             >Last Update on <%= new
                             Date(doc.updatedAt).toDateString() %> at <%= new
-                            Date(doc.updatedAt).toLocaleTimeString() %></small
+                            Date(doc.updatedAt).toLocaleTimeString("en-in")
+                            %></small
                         ><% } %>
                     </p>
                     <svg

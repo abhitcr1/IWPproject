@@ -49,7 +49,7 @@ function LoginPage() {
                             Submit
                         </button>
                     </form>
-                    <HelperMenu signup={true} forgot={true} />
+                    <HelperMenu signup={true} forgot={false} />
                     <OpenSource />
                 </div>
             </div>

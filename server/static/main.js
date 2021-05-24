@@ -17,9 +17,3 @@ navigator.geolocation.getCurrentPosition(
         $("#weather").text("Permission Denied for Location");
     }
 );
-$(".picker").flatpickr({
-    disableMobile: true,
-    onChange: function (selectedString) {
-        console.log(selectedString);
-    },
-});

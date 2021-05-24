@@ -27,10 +27,15 @@ router.get("/", AuthMiddleWare, (req, res) => {
                     },
                     { $sort: { createdAt: -1 } },
                 ]).limit(6);
+                const dates = await Entry.find(
+                    { uid: decode._id },
+                    { createdAt: 1 }
+                );
                 return res.render("index.html", {
                     page: "home",
                     name: user["name"],
                     docs: items,
+                    dates: dates,
                 });
             }
         }
