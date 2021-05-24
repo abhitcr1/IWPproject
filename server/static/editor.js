@@ -34,7 +34,7 @@ $(document).ready(function () {
                     const mood = $(".mood-btn > button.active")
                         .attr("class")
                         ?.split("my-1 ")[1]
-                        .split(" ")[0];
+                        ?.split(" ")[0];
                     const title = $("#ctitle").text();
                     const weather = $("#weatherN").text();
                     const location = $("#locationN").text();

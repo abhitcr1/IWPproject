@@ -44,55 +44,55 @@
     <!-- Row of card entries -->
     <div class="rol">
         <div class="col mt-2">
-            <div class="card-row">
+            <!-- prettier-ignore -->
+            <div
+                class="
+                    card-row <% if(docs.length == 0) { %> d-flex justify-content-center<%}%>"
+            >
+                <% if(docs.length == 0) {%>
                 <div class="card card-width m-2">
-                    <a href="/edit"
-                        ><img src="https://source.unsplash.com/320x640" />
+                    <a href="/edit/new">
+                        <img src="https://source.unsplash.com/320x640" />
                         <span class="overlay p-2">
-                            <h2 class="h2 py-3">July 18, 2021</h2>
-                            <p class="text-light">You seem happy. 😀</p>
+                            <h2 class="h2 pt-3 pb-1">Nothing to show</h2>
+                            <p class="text-light pb-3">
+                                You don't have any entry in the diary.
+                            </p>
+
                             <p class="py-5 fst-italic my-5">
-                                4 entries on this day
+                                To create a new one click on this card,<br />
+                                or you can click on the + icon.
                             </p>
                         </span></a
                     >
                 </div>
+
+                <%}%> <% docs.forEach(el=>{ %>
                 <div class="card card-width m-2">
-                    <a href="/edit"
-                        ><img src="https://source.unsplash.com/320x640" />
+                    <a href="/edit/<%=el._id%>">
+                        <% if(el.images && el.images.length) { %>
+                        <img src="<%=el.images[0]%>" />
+                        <%}else{%>
+                        <img
+                            src="https://source.unsplash.com/320x640?rand=<%=el._id%>"
+                        />
+                        <%}%>
                         <span class="overlay p-2">
-                            <h2 class="h2 py-3">July 18, 2021</h2>
-                            <p class="text-light">You seem happy. 😀</p>
-                            <p class="py-5 fst-italic my-5">
-                                4 entries on this day
+                            <h2 class="h2 pt-3 pb-1"><%=el.title %></h2>
+                            <p class="text-light pb-3">
+                                <%=new Date(el.createdAt).toDateString()%>
                             </p>
+                            <% if(el.mood) { %>
+                            <p class="text-light">You seem <%=el.mood%> 😂</p>
+                            <%}%> <% if(el.entries) { %>
+                            <p class="py-5 fst-italic my-5">
+                                <%=el.entries%> entries on this day
+                            </p>
+                            <%}%>
                         </span></a
                     >
                 </div>
-                <div class="card card-width m-2">
-                    <a href="/edit"
-                        ><img src="https://source.unsplash.com/320x640" />
-                        <span class="overlay p-2">
-                            <h2 class="h2 py-3">July 18, 2021</h2>
-                            <p class="text-light">You seem happy. 😀</p>
-                            <p class="py-5 fst-italic my-5">
-                                4 entries on this day
-                            </p>
-                        </span></a
-                    >
-                </div>
-                <div class="card card-width m-2">
-                    <a href="/edit"
-                        ><img src="https://source.unsplash.com/320x640" />
-                        <span class="overlay p-2">
-                            <h2 class="h2 py-3">July 18, 2021</h2>
-                            <p class="text-light">You seem happy. 😀</p>
-                            <p class="py-5 fst-italic my-5">
-                                4 entries on this day
-                            </p>
-                        </span></a
-                    >
-                </div>
+                <% })%>
             </div>
         </div>
     </div>
