@@ -82,8 +82,8 @@ function importFileandPreview()
 
     reader.addEventListener("load", function () {
         var lastcarbtn= document.getElementById("last");
-        var slide= lastcarbtn.getAttribute ("data-bs-slide-to");
-        var label= lastcarbtn.getAttribute ("aria-label");
+        var slide= 0 || lastcarbtn?.getAttribute ("data-bs-slide-to");
+        var label= "Slide 0" || lastcarbtn?.getAttribute ("aria-label");
 
         var carbtn= document.createElement ('button');
         carbtn.type= 'button';        
@@ -93,8 +93,8 @@ function importFileandPreview()
 
         $("#last" ).before(carbtn);
         slide++;
-        lastcarbtn.setAttribute ("data-bs-slide-to", slide);
-        lastcarbtn.setAttribute ("aria-label", "Slide " + slide+1);
+        lastcarbtn?.setAttribute ("data-bs-slide-to", slide);
+        lastcarbtn?.setAttribute ("aria-label", "Slide " + slide+1);
         
 
         var cars= document.createElement ('div');
