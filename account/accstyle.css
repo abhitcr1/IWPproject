@@ -1,123 +1,94 @@
-.card img {
-    width: 100%;
-    height: 100%;
+.profile-head {
+    transform: translateY(4.5rem);
 }
-#cimg {
-    max-height: 90vh;
-    height: auto;
-    overflow: hidden;
-}
-div#cimg::after {
-    content: "";
-    background-image: linear-gradient(
-        180deg,
-        #00000078,
-        transparent,
-        transparent
-    );
-    position: absolute;
-    top: 0;
-    width: inherit;
-    height: -webkit-fill-available;
-    max-height: 92vh;
-}
-
-#cimg .rounded-pill {
-    position: absolute;
-    left: 1%;
-    z-index: 99;
-    top: 1.5%;
-    fill: #212529;
-    background-color: #ffffff;
-    transition: all cubic-bezier(0.165, 0.84, 0.44, 1) 0.3s;
-}
-#cimg .rounded-pill:hover {
-    width: 40px;
-    height: 40px;
-    top: 1.25%;
-    left: 0.75%;
-}
-
-#car-upl{
-    margin: 70% 0;
-    text-align: center;
-}
-.bi-upload {
+.profile{
+    text-align: center; 
     position: relative;
-    z-index: 99;
-    fill: #212529;
-    transform: perspective(1px) translateZ(0);
-    transition-duration: 0.3s;
-    transition-property: transform;
 }
-.bi-upload:hover, .bi-upload:focus, .bi-upload:active {
-    transform: scale(1.2);    
-}
-
-.card-body {
-    overflow-y: scroll;
-    max-height: 90vh;
-    height: auto;
-}
-.save {
-    width: 40px;
-    height: 40px;
+.btn-sm{
     position: absolute;
-    right: 2%;
-    bottom: 3%;
-    transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s;
-    cursor: pointer;
+    bottom: 0;
+    right: 4%;
+    background-color: white;
 }
-.save:hover {
-    width: 45px;
-    height: 45px;
-    right: 1.75%;
-    bottom: 2.5%;
-}
-div > #weather {
-    position: absolute;
-    top: 2%;
-    right: 1.5%;
-}
-.mood-btn button:focus,
-.mood-btn button:active {
-    background-color: #8ee6fc;
-}
-.card-text:empty:before {
-    content: attr(data-placeholder);
-}
-.card-title::first-letter {
-    font-size: 130%;
-}
-.top-10 {
-    top: 3%;
-    bottom: unset;
-}
-.create:hover {
-    background-color: #cecdcd;
+@media (min-width: 768px){
+    .btn-sm{
+        right: 14%;
+    }
 }
 
+#dpimg {
+    padding: .2rem;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 50%;
+    max-width: 100%;
+    height: 150px;
+}
+@media (max-width: 390px){
+    #dpimg{
+        height: 125px;
+    }
+}
+@media (max-width: 340px){
+    #dpimg{
+        height: 105px;
+    }
+}
+.cover {
+    background-image: url(https://images.unsplash.com/photo-1530305408560-82d13781b33a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.media {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    position: relative;
+    z-index: 1;
+}
+body{
+    margin-top:20px;
+    color: #1a202c;
+    text-align: left;
+    background-color: #e2e8f0;    
+}
+.main-body {
+    padding: 15px;
+}
+.card {
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
+}
 
-@media (max-width: 575px) {
-    #car-upl{
-        margin: 85% 0;
-    }
-    #cimg .rounded-pill {
-        left: 3%;
-    }
-    #cimg .rounded-pill:hover {
-        top: 2.75%;
-    }
-    .save {
-        right: 3%;
-        bottom: 2%;
-    }
-    .save:hover {
-        right: 2.5%;
-        bottom: 1.75%;
-    }
-    div #weather {
-        top: 30%;
-        right: 2%;
-    }
+.gutters-sm {
+    margin-right: -8px;
+    margin-left: -8px;
+}
+
+.gutters-sm>.col, .gutters-sm>[class*=col-] {
+    padding-right: 8px;
+    padding-left: 8px;
+}
+.mb-3, .my-3 {
+    margin-bottom: 1rem!important;
+}
+
+.bg-gray-300 {
+    background-color: #e2e8f0;
+}
+.h-100 {
+    height: 100%!important;
+}
+.shadow-none {
+    box-shadow: none!important;
+}
+
+.btn-info{
+    float: right;
+}
+.btn-danger{
+    float: left;
 }
