@@ -21,7 +21,8 @@ div#cimg::after {
     height: -webkit-fill-available;
     max-height: 92vh;
 }
-#cimg svg {
+
+#cimg .rounded-pill {
     position: absolute;
     left: 1%;
     z-index: 99;
@@ -30,12 +31,29 @@ div#cimg::after {
     background-color: #ffffff;
     transition: all cubic-bezier(0.165, 0.84, 0.44, 1) 0.3s;
 }
-#cimg svg:hover {
+#cimg .rounded-pill:hover {
     width: 40px;
     height: 40px;
     top: 1.25%;
     left: 0.75%;
 }
+
+#car-upl{
+    margin: 70% 0;
+    text-align: center;
+}
+.bi-upload {
+    position: relative;
+    z-index: 99;
+    fill: #212529;
+    transform: perspective(1px) translateZ(0);
+    transition-duration: 0.3s;
+    transition-property: transform;
+}
+.bi-upload:hover, .bi-upload:focus, .bi-upload:active {
+    transform: scale(1.2);    
+}
+
 .card-body {
     overflow-y: scroll;
     max-height: 90vh;
@@ -78,11 +96,16 @@ div > #weather {
 .create:hover {
     background-color: #cecdcd;
 }
+
+
 @media (max-width: 575px) {
-    #cimg svg {
+    #car-upl{
+        margin: 85% 0;
+    }
+    #cimg .rounded-pill {
         left: 3%;
     }
-    #cimg svg:hover {
+    #cimg .rounded-pill:hover {
         top: 2.75%;
     }
     .save {
