@@ -93,7 +93,8 @@ router.post("/:id", AuthMiddleWare, (req, res) => {
                         doc.entries = doc.entries.filter((el) => el.data);
                         if (req.body.newEntry)
                             doc.entries.push({ data: req.body.newEntry });
-
+                        if (req.body.newImage)
+                            doc.images.push(...req.body.newImage);
                         doc.save((err, d) => {
                             return res.send(err || d._id);
                         });

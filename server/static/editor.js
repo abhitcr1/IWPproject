@@ -1,6 +1,47 @@
 document.getElementById("text-time").innerHTML = new Date().toLocaleTimeString(
     "en-in"
 );
+var newImg = [];
+function importFileandPreview() {
+    var file = document.querySelector("input[type=file]").files[0];
+    var reader = new FileReader();
+
+    reader.addEventListener(
+        "load",
+        function () {
+            var lastcarbtn = document.getElementById("last");
+            var slide = 0 || lastcarbtn?.getAttribute("data-bs-slide-to");
+            var label = "Slide 0" || lastcarbtn?.getAttribute("aria-label");
+
+            var carbtn = document.createElement("button");
+            carbtn.type = "button";
+            carbtn.setAttribute("data-bs-target", "#cars-intro");
+            carbtn.setAttribute("data-bs-slide-to", slide);
+
+            $("#last").before(carbtn);
+            slide++;
+            lastcarbtn?.setAttribute("data-bs-slide-to", slide);
+
+            var cars = document.createElement("div");
+            cars.className = "carousel-item";
+
+            var img = document.createElement("img");
+            img.className = "d-block w-100";
+            img.style.height = "92vh";
+            img.src = reader.result;
+
+            newImg.push(reader.result);
+
+            cars.appendChild(img);
+            $("#car-upl").before(cars);
+
+            $(".carousel").carousel(slide - 1);
+        },
+        false
+    );
+
+    if (file) reader.readAsDataURL(file);
+}
 $(document).ready(function () {
     $(".carousel").carousel({
         interval: 4000,
@@ -45,6 +86,7 @@ $(document).ready(function () {
                             ? undefined
                             : $("#text-body").text();
                     let old = [];
+
                     $("#editable p")
                         .toArray()
                         .forEach((el, idx) => {
@@ -61,6 +103,7 @@ $(document).ready(function () {
                         location,
                         newEntry,
                         oldEntry: old,
+                        newImage: newImg,
                     };
                     $.ajax({
                         url: window.location.url,
