@@ -1,3 +1,35 @@
+$(document).ready(function () {
+    console.log("Trigger Carousel");
+    $(".carousel").carousel({
+        interval: false,
+    });
+});
+
+$("#save-ch").click(function () {
+    $(".carousel").carousel('next');
+});
+
+$("#reset").click(function () {
+    $(".carousel").carousel('prev');
+});
+
+$("#edit").click(function () {
+    $(".carousel").carousel('next');
+});
+
+$("#save").click(function () {
+    var name= document.getElementById
+    $(".carousel").carousel('prev');
+});
+
+
+
+
+
+
+
+
+
 var dpImg= "";
 function importFileandPreview() 
 {

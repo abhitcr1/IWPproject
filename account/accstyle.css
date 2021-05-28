@@ -59,8 +59,11 @@ body{
 .main-body {
     padding: 15px;
 }
-.card {
+.carousel-inner {
     box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
+}
+.card-body{
+    height: 400px !important;
 }
 
 .gutters-sm {
@@ -91,4 +94,28 @@ body{
 }
 .btn-danger{
     float: left;
+}
+
+.col-sm-4 a{
+    text-decoration: none;
+    color: crimson;
+    font-weight: 500;
+    font-size: 11px;
+}
+.col-sm-4 a:hover{
+    text-decoration: underline;
+}
+
+.form-control{
+    height: auto;
+    text-align: initial;
+}
+.col-sm-3 .mb-0{
+    line-height: 2.5;
+}
+
+@media (max-width: 575px){
+    #pwd{
+        display: contents;
+    }
 }
