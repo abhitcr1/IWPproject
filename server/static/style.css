@@ -366,7 +366,7 @@ div#cimg::after {
     bottom: 2.5%;
 }
 div > #weather {
-    position: absolute;
+    /* position: absolute; */
     top: 2%;
     right: 1.5%;
 }
