@@ -1,7 +1,7 @@
 <nav class="navbar navbar-light navbar-expand-lg">
     <!-- Navbar brand -->
     <div class="container-fluid">
-        <a href="#" class="navbar-brand">
+        <a href="/" class="navbar-brand">
             <img
                 src="/assets/favicon.png"
                 alt="Diary Icon"
@@ -15,26 +15,6 @@
         <!-- Navbar Shortcut Links -->
         <div class="" id="navbarNav">
             <ul class="navbar-nav d-flex w-100 mt-2 mt-lg-0">
-                <form
-                    class="form-inline mx-lg-2 d-flex align-items-center d-none"
-                >
-                    <label
-                        ><input type="text" id="search-bar" /><span
-                            class="glyphicon glyphicon-search"
-                            style="
-                                padding-right: 3px;
-                                padding-top: 3px;
-                                display: inline-block;
-                            "
-                            ><img
-                                src="https://www.pngfind.com/pngs/m/432-4323226_search-icon-transparent-search-button-png-png-download.png"
-                                alt=""
-                                style="
-                                    height: 25px;
-                                    display: inline-block;
-                                " /></span
-                    ></label>
-                </form>
                 <div class="d-block ms-0 d-lg-flex ms-lg-auto">
                     <!-- Inline item for other devices -->
 
@@ -57,7 +37,7 @@
                         >
                             <%= name %>
                             <img
-                                src="https://lh3.googleusercontent.com/a-/AOh14GjLl6-teruNiz6KsDh9p7Cx-a6z817FzdiUZY1cbiE=s96-c"
+                                src="<%= profile %>"
                                 alt="<%= name %>"
                                 class="img-fluid avatar"
                                 crossorigin="anonymous"
@@ -78,7 +58,7 @@
                                         d-flex
                                         align-items-center
                                     "
-                                    href="#"
+                                    href="/account"
                                 >
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"

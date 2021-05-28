@@ -48,6 +48,7 @@ router.get("/:id", AuthMiddleWare, (req, res) => {
                             return res.render("index.html", {
                                 page: "edit",
                                 name: user.name,
+                                profile: user.picture,
                                 doc: doc,
                             });
                         }

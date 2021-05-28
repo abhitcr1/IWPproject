@@ -36,6 +36,10 @@ app.use("/edit", require("./routes/edit"));
 app.use("/login", require("./routes/LogIn"));
 app.use("/signup", require("./routes/SignUp"));
 app.use("/logout", require("./routes/logout"));
-app.use("/api", require("./routes/api/getEnabledDates"));
-app.use("/api", require("./routes/api/getEntry"));
+app.use("/account", require("./routes/account"));
+app.use("/api", require("./routes/api/updatePassword"));
+app.use("/api", require("./routes/api/updateProfile"));
+app.use("/api", require("./routes/api/updatePhoto"));
+app.use("/api", require("./routes/api/deleteAccount"));
+
 app.listen(PORT, () => console.log(`Listening on PORT: ${PORT}`));

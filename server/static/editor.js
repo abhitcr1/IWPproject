@@ -5,10 +5,9 @@ var newImg = [];
 function importFileandPreview() {
     var file = document.querySelector("input[type=file]").files[0];
     var reader = new FileReader();
-
     reader.addEventListener(
         "load",
-        function () {
+        async function () {
             var lastcarbtn = document.getElementById("last");
             var slide = 0 || lastcarbtn?.getAttribute("data-bs-slide-to");
             var label = "Slide 0" || lastcarbtn?.getAttribute("aria-label");
@@ -28,14 +27,23 @@ function importFileandPreview() {
             var img = document.createElement("img");
             img.className = "d-block w-100";
             img.style.height = "92vh";
-            img.src = reader.result;
-
-            newImg.push(reader.result);
 
             cars.appendChild(img);
             $("#car-upl").before(cars);
 
             $(".carousel").carousel(slide - 1);
+            var imageReader = new FileReader();
+            imageReader.addEventListener("load", () => {
+                img.src = imageReader.result;
+                newImg.push(imageReader.result);
+            });
+            imageReader.readAsDataURL(
+                await BrowserImageResizer.readAndCompressImage(file, {
+                    quality: 0.7,
+                    maxWidth: 320,
+                    maxHeight: 640,
+                })
+            );
         },
         false
     );

@@ -34,6 +34,7 @@ router.get("/", AuthMiddleWare, (req, res) => {
                 return res.render("index.html", {
                     page: "home",
                     name: user["name"],
+                    profile: user.picture,
                     docs: items,
                     dates: dates,
                 });
