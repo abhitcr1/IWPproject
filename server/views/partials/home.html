@@ -82,9 +82,32 @@
                             <h2 class="h2 pt-3 pb-1"><%=el.title %></h2>
                             <p class="text-light pb-3">
                                 <%=new Date(el.createdAt).toDateString()%>
-                            </p>
+                            </p>                            
+                            
                             <% if(el.mood) { %>
-                            <p class="text-light">You seem <%=el.mood%> 😂</p>
+                            <p class="text-light">You seem 
+                                <% switch (el.mood) {
+                                    case 'happy' : %>
+                                            Happy &#128522;
+                                            <% break;
+                                    
+                                    case 'sad' : %>
+                                            Sad &#128532;
+                                            <% break;
+                                    
+                                    case 'angry' : %>
+                                            Angry &#128545;
+                                            <% break;
+                                    
+                                    case 'stressed' : %>
+                                            Stressed &#128553;
+                                            <% break;
+                                    
+                                    case 'scared' : %>
+                                            Stressed &#128560;
+                                            <% break;                                
+                                    } %>
+                            </p>
                             <%}%> <% if(el.entries) { %>
                             <p class="py-5 fst-italic my-5">
                                 <%=el.entries%> entries on this day
