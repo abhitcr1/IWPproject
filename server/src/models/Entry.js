@@ -15,6 +15,7 @@ const Entry = new Schema(
             },
         ],
         images: [String],
+        userHash: String,
     },
     { timestamps: true }
 );
