@@ -1,6 +1,6 @@
 navigator.geolocation.getCurrentPosition(
     (data) => {
-        $("#weather").text("Loading....");
+        $("#weather").text("Fetching Location...");
         const lat = data.coords.latitude;
         const long = data.coords.longitude;
         $.ajax({
@@ -14,6 +14,6 @@ navigator.geolocation.getCurrentPosition(
         });
     },
     (error) => {
-        $("#weather").text("Permission Denied for Location");
+        $("#weather").text("Location permission needs to allowed");
     }
 );
