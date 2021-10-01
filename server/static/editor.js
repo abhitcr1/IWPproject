@@ -10,7 +10,7 @@ function importFileandPreview() {
         async function () {
             var lastcarbtn = document.getElementById("last");
             var slide = 0 || lastcarbtn?.getAttribute("data-bs-slide-to");
-            var label = "Slide 0" || lastcarbtn?.getAttribute("aria-label");
+            var label = "Loading Slide" || lastcarbtn?.getAttribute("aria-label");
 
             var carbtn = document.createElement("button");
             carbtn.type = "button";
@@ -39,7 +39,7 @@ function importFileandPreview() {
             });
             imageReader.readAsDataURL(
                 await BrowserImageResizer.readAndCompressImage(file, {
-                    quality: 0.7,
+                    quality: 0.8,
                     maxWidth: 320,
                     maxHeight: 640,
                 })
@@ -52,7 +52,7 @@ function importFileandPreview() {
 }
 $(document).ready(function () {
     $(".carousel").carousel({
-        interval: 4000,
+        interval: 2000,
     });
 
     // To change mood
